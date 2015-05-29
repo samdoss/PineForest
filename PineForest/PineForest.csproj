@@ -165,9 +165,47 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\JFFormStyle-1.css" />
+    <Content Include="css\jquery-ui.css" />
+    <Content Include="css\owl.carousel.css" />
+    <Content Include="css\style.css" />
+    <Content Include="Images\1.jpg" />
+    <Content Include="Images\1ser_pic4.jpg" />
+    <Content Include="Images\2.jpg" />
+    <Content Include="Images\3.jpg" />
+    <Content Include="Images\4.jpg" />
+    <Content Include="Images\5.jpg" />
+    <Content Include="Images\6.jpg" />
+    <Content Include="Images\8.jpg" />
     <Content Include="Images\accent.png" />
+    <Content Include="Images\box.png" />
     <Content Include="Images\bullet.png" />
+    <Content Include="Images\c1.jpg" />
+    <Content Include="Images\c11.jpg" />
+    <Content Include="Images\c2.jpg" />
+    <Content Include="Images\c22.jpg" />
+    <Content Include="Images\c3.jpg" />
+    <Content Include="Images\c33.jpg" />
+    <Content Include="Images\c4.jpg" />
+    <Content Include="Images\c44.jpg" />
+    <Content Include="Images\c5.jpg" />
+    <Content Include="Images\c55.jpg" />
+    <Content Include="Images\c6.jpg" />
+    <Content Include="Images\c66.jpg" />
+    <Content Include="Images\det_pic.jpg" />
     <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\hotel1.jpg" />
+    <Content Include="Images\hotel2.jpg" />
+    <Content Include="Images\icon.png" />
+    <Content Include="Images\icon1.png" />
+    <Content Include="Images\icon2.png" />
+    <Content Include="Images\iocn3.png" />
+    <Content Include="Images\logo - Copy.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\man.png" />
+    <Content Include="Images\nav.png" />
+    <Content Include="Images\next.png" />
     <Content Include="Images\orderedList0.png" />
     <Content Include="Images\orderedList1.png" />
     <Content Include="Images\orderedList2.png" />
@@ -181,7 +219,35 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\package-bg.jpg" />
+    <Content Include="Images\pic1.jpg" />
+    <Content Include="Images\pic2.jpg" />
+    <Content Include="Images\pic3.jpg" />
+    <Content Include="Images\pic4.jpg" />
+    <Content Include="Images\pic5.jpg" />
+    <Content Include="Images\pic6.jpg" />
+    <Content Include="Images\rooms.jpg" />
+    <Content Include="Images\s1.png" />
+    <Content Include="Images\s2.png" />
+    <Content Include="Images\s3.png" />
+    <Content Include="Images\ser_pic1.jpg" />
+    <Content Include="Images\ser_pic2.jpg" />
+    <Content Include="Images\ser_pic3.jpg" />
+    <Content Include="Images\ser_pic5.jpg" />
+    <Content Include="Images\ser_pic6.jpg" />
+    <Content Include="Images\ser_pic7.jpg" />
+    <Content Include="Images\ser_pic8.jpg" />
+    <Content Include="Images\splits.png" />
+    <Content Include="js\JFCore.js" />
+    <Content Include="js\JFForms.js" />
+    <Content Include="js\jquery-ui.js" />
+    <Content Include="js\jquery.flexisel.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\owl.carousel.js" />
+    <Content Include="js\responsiveslides.min.js" />
     <Content Include="packages.config" />
+    <Content Include="Pine.Master" />
+    <Content Include="Pine.Mobile.Master" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -262,6 +328,20 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Pine.Master.cs">
+      <DependentUpon>Pine.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pine.Master.designer.cs">
+      <DependentUpon>Pine.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pine.Mobile.Master.cs">
+      <DependentUpon>Pine.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pine.Mobile.Master.designer.cs">
+      <DependentUpon>Pine.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
