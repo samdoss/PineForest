@@ -33,7 +33,7 @@ text-decoration: none;
 }
 /*-----start-header----*/
 .top-header{
-background:#2A2E33;
+background:#314131;
 }
 .logo{
 float:left;
@@ -82,7 +82,7 @@ color:#fff;
 border-top:2px solid #FFD700;
 }
 .banner{
-background:#00CCFF;
+background:#7bd3f7;
 min-height:300px;
 padding:2em 0 4em 0;
 }
@@ -95,7 +95,7 @@ margin-bottom:12px;
 font-weight:600;
 }
 .banner-info h1{
-color:#fff;
+color:#ff00a5;
 font-weight:bold;
 border-top:1px dashed rgba(255, 255, 255, 0.59);
 width:30%;
@@ -714,7 +714,7 @@ top:-84%;
 left:71%;
 }
 .fotter-info{
-background:#333333;
+background:#314131;
 padding:4em 0;
 }
 .hotel-info{
