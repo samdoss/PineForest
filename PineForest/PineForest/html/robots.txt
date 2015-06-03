@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: 
+
+SITEMAP: http://www.pineforestmunnar.com/sitemap.xml
