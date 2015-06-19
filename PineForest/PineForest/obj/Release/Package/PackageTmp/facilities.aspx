@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphMenu" runat="server">
     <ul>
-        <li><a class="scroll" href="Default.aspx">Home</a></li>
+        <li><a class="scroll" href="Default.aspx">HOME</a></li>
         <li class="active"><a class="scroll" href="facilities.aspx">FACILITIES</a></li>
         <li><a class="scroll" href="aboutmunnar.aspx">ABOUT MUNNAR</a></li>        
         <li><a class="scroll" href="gallery.aspx">GALLERY</a></li>        

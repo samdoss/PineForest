@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphMenu" runat="server">
     <ul>
-        <li class="active"><a class="scroll" href="Default.aspx">Home</a></li>
+        <li class="active"><a class="scroll" href="Default.aspx">HOME</a></li>
         <li><a class="scroll" href="facilities.aspx">FACILITIES</a></li>
         <li><a class="scroll" href="aboutmunnar.aspx">ABOUT MUNNAR</a></li>        
         <li><a class="scroll" href="gallery.aspx">GALLERY</a></li>        
@@ -78,9 +78,10 @@
                             <!----------start section_room----------->
                             <div class="section_room">
                                 <select id="country" onchange="change_country(this.value)" class="frm-field required">
-                                    <option value="Economy">Economy room</option>
-                                    <option value="Deluxe">Deluxe room</option>
-                                    <option value="SuperDeluxe">Super Deluxe room</option>
+                                    <option value="STD">Standard Double Bed Room</option>
+                                    <option value="SUP">Superior Double Bed Room</option>
+                                    <option value="FAM">Family Room</option>
+                                    <option value="Honey">Honeymoon Cottage</option>
                                 </select>
                             </div>
                         </li>
@@ -98,7 +99,7 @@
             <div class="clearfix"></div>
         </div>
     </div>
-    </div>
+    
     <!---->
     <div class="package text-center">
         <div class="container">
@@ -161,7 +162,7 @@
             <div class="room-grids">
                 <div class="col-md-4 room-sec">
                     <img src="images/Economy.jpg" alt="" />
-                    <h4>Economy Room</h4>
+                    <h4>Standard Double Bed Room</h4>
                     <div class="items">
                         <li><a href="#"><span class="img1"></span></a></li>
                         <li><a href="#"><span class="img2"></span></a></li>
@@ -173,7 +174,7 @@
                 </div>
                 <div class="col-md-4 room-sec">
                     <img src="images/Deluxe.jpg" alt="" />
-                    <h4>Deluxe Room</h4>
+                    <h4>Superior Double Bed Room</h4>
                     <div class="items">
                         <li><a href="#"><span class="img1"></span></a></li>
                         <li><a href="#"><span class="img2"></span></a></li>
@@ -185,7 +186,7 @@
                 </div>
                 <div class="col-md-4 room-sec">
                     <img src="images/FamilyRoom.jpg" alt="" />
-                    <h4>Super Deluxe Room</h4>
+                    <h4>Family Room</h4>
                     <div class="items">
                         <li><a href="#"><span class="img1"></span></a></li>
                         <li><a href="#"><span class="img2"></span></a></li>
@@ -198,7 +199,7 @@
                 <div class="clearfix"></div>
             </div>
             <div>
-                <img src="images/PricingTab.png" alt="" />
+                <%--<img src="images/PricingTab.png" alt="" />--%>
             </div>
         </div>
     </div>

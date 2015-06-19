@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AboutMunnar.aspx" />
+    <Content Include="ajax-loader_dark.gif" />
     <Content Include="Booking.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="css\bootstrap.css" />
@@ -112,9 +113,43 @@
     <Content Include="css\owl.carousel.css" />
     <Content Include="css\style.css" />
     <Content Include="Default.aspx" />
+    <Content Include="empty.gif" />
     <Content Include="facilities.aspx" />
     <Content Include="favicon.ico" />
-    <Content Include="Gallery.aspx" />
+    <Content Include="fs_img_g_bg.png" />
+    <Content Include="1233Gallery.aspx" />
+    <Content Include="gimages\1.jpg" />
+    <Content Include="gimages\10.jpg" />
+    <Content Include="gimages\10_thumb.jpg" />
+    <Content Include="gimages\11.jpg" />
+    <Content Include="gimages\11_thumb.jpg" />
+    <Content Include="gimages\12.jpg" />
+    <Content Include="gimages\12_thumb.jpg" />
+    <Content Include="gimages\13.jpg" />
+    <Content Include="gimages\13_thumb.jpg" />
+    <Content Include="gimages\14.jpg" />
+    <Content Include="gimages\14_thumb.jpg" />
+    <Content Include="gimages\15.jpg" />
+    <Content Include="gimages\15_thumb.jpg" />
+    <Content Include="gimages\16.jpg" />
+    <Content Include="gimages\16_thumb.jpg" />
+    <Content Include="gimages\1_thumb.jpg" />
+    <Content Include="gimages\2.jpg" />
+    <Content Include="gimages\2_thumb.jpg" />
+    <Content Include="gimages\3.jpg" />
+    <Content Include="gimages\3_thumb.jpg" />
+    <Content Include="gimages\4.jpg" />
+    <Content Include="gimages\4_thumb.jpg" />
+    <Content Include="gimages\5.jpg" />
+    <Content Include="gimages\5_thumb.jpg" />
+    <Content Include="gimages\6.jpg" />
+    <Content Include="gimages\6_thumb.jpg" />
+    <Content Include="gimages\7.jpg" />
+    <Content Include="gimages\7_thumb.jpg" />
+    <Content Include="gimages\8.jpg" />
+    <Content Include="gimages\8_thumb.jpg" />
+    <Content Include="gimages\9.jpg" />
+    <Content Include="gimages\9_thumb.jpg" />
     <Content Include="Global.asax" />
     <Content Include="html\booking.html" />
     <Content Include="html\conference.html" />
@@ -261,6 +296,7 @@
     <Content Include="images\splits.png" />
     <Content Include="images\SuperDeluxe.jpg" />
     <Content Include="images\under_constr.jpg" />
+    <Content Include="jquery.easing.1.3.js" />
     <Content Include="js\JFCore.js" />
     <Content Include="js\JFForms.js" />
     <Content Include="js\jquery-ui.js" />
@@ -268,11 +304,17 @@
     <Content Include="js\jquery.min.js" />
     <Content Include="js\owl.carousel.js" />
     <Content Include="js\responsiveslides.min.js" />
+    <Content Include="nextImgBtn.png" />
+    <Content Include="Gallery.aspx" />
+    <Content Include="prevImgBtn.png" />
     <Content Include="robots.txt" />
+    <Content Include="toolbar_fs_icon.png" />
+    <Content Include="toolbar_n_icon.png" />
     <Content Include="w3layouts-license.txt" />
     <Content Include="Web.config" />
     <Content Include="Pine.Master" />
     <Content Include="images\Thumbs.db" />
+    <Content Include="Forest.Master" />
     <None Include="Properties\PublishProfiles\PineForest.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -317,12 +359,19 @@
     <Compile Include="facilities.aspx.designer.cs">
       <DependentUpon>facilities.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Gallery.aspx.cs">
-      <DependentUpon>Gallery.aspx</DependentUpon>
+    <Compile Include="Forest.Master.cs">
+      <DependentUpon>Forest.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Gallery.aspx.designer.cs">
-      <DependentUpon>Gallery.aspx</DependentUpon>
+    <Compile Include="Forest.Master.designer.cs">
+      <DependentUpon>Forest.Master</DependentUpon>
+    </Compile>
+    <Compile Include="1233Gallery.aspx.cs">
+      <DependentUpon>1233Gallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="1233Gallery.aspx.designer.cs">
+      <DependentUpon>1233Gallery.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -333,6 +382,13 @@
     </Compile>
     <Compile Include="Pine.Master.designer.cs">
       <DependentUpon>Pine.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery.aspx.cs">
+      <DependentUpon>Gallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gallery.aspx.designer.cs">
+      <DependentUpon>Gallery.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
