@@ -16,7 +16,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphBanner" runat="server">
     <div class="banner">
         <div class="banner-info text-center">
-            <h3>
+           <%-- <h3>
                 <label>Hello,</label>
                 You've Reached</h3>
             <img src="images/pineforestmunnarbanner.png" alt="pine forest munnar">
@@ -26,7 +26,7 @@
                 <li><a class="scroll" href="#">Room Service</a><i class="line2"></i></li>
                 <li><a class="scroll" href="#">FINE DINING</a></li>
                 <div class="clearfix"></div>
-            </ul>
+            </ul>--%>
         </div>
     </div>
 </asp:Content>

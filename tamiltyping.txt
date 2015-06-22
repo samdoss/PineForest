@@ -1,0 +1,4 @@
+<script>
+var s = document.createElement('script'); s.setAttribute('src','http://developer.quillpad.in/static/js/quill.js?lang=Tamil&key=8ddee8c19a471722d7571b36c68b25c0'); s.setAttribute('id','qpd_script'); document.head.appendChild(s);
+</script>
+<span id="qpd_banner">Tamil Typing On This Site Is Powered By <a href="http://www.quillpad.in/" target="_blank">Quillpad</a>.</span>
