@@ -56,3 +56,10 @@ D:\CurrectProject\WebPineForest\pineforest\PineForest\PineForest\bin\Microsoft.A
 D:\CurrectProject\WebPineForest\pineforest\PineForest\PineForest\bin\System.Net.Http.xml
 D:\CurrectProject\WebPineForest\pineforest\PineForest\PineForest\obj\Release\PineForest.dll
 D:\CurrectProject\WebPineForest\pineforest\PineForest\PineForest\obj\Release\PineForest.pdb
+F:\currentproject\PineForest\PineForest\PineForest\bin\PineForest.dll.config
+F:\currentproject\PineForest\PineForest\PineForest\bin\PineForest.dll
+F:\currentproject\PineForest\PineForest\PineForest\bin\PineForest.pdb
+F:\currentproject\PineForest\PineForest\PineForest\bin\Microsoft.Web.Infrastructure.dll
+F:\currentproject\PineForest\PineForest\PineForest\bin\Microsoft.Web.Infrastructure.xml
+F:\currentproject\PineForest\PineForest\PineForest\obj\Release\PineForest.dll
+F:\currentproject\PineForest\PineForest\PineForest\obj\Release\PineForest.pdb

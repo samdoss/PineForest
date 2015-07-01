@@ -20,6 +20,7 @@
     <div class="container">
         <div class="main">
             <h3>Munnar</h3>
+            <img src="../bannerimage/image147.jpg" style="width:100%; height:100%" />
             <p class="para">
                 Munnar - breathtakingly beautiful - a haven of peace and tranquility - the idyllic tourist destination in God's own country.
             </p>

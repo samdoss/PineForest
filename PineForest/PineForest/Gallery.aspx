@@ -52,6 +52,20 @@
             text-transform: uppercase;
         }
 
+        .browserreturn {
+            float: right;
+            position: fixed;
+            z-index: 3;
+            right: 100px;            
+            top: 10px;
+            padding: 10px;
+            background: url(fs_img_g_bg.png);
+            color: #FFF;
+            font-family: 'Josefin Sans Std Light', arial, serif;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+
         #bg {
             position: fixed;
             z-index: 1;
@@ -156,6 +170,7 @@
     </style>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
     <script type="text/javascript" src="jquery.easing.1.3.js"></script>
+     
 </head>
 <body>
     <form>
@@ -169,6 +184,7 @@
             <img src="ajax-loader_dark.gif" width="32" height="32" />
         </div>
         <div id="img_title"></div>
+        <a href="javascript: history.go(-1)" class="browserreturn">Back to Menu</a>
         <div id="toolbar">
             <a href="#" title="Maximize" onclick="ImageViewMode('full'); return false;">
                 <img src="toolbar_fs_icon.png" width="50" height="50" /></a>
@@ -181,18 +197,21 @@
                             <div>
                                 <a href="gimages/1.jpg">
                                     <img src="gimages/1_thumb.jpg" title="Pine Forest" alt="Pine Forest" class="thumb" /></a>
+                                
                             </div>
                         </div>
                         <div class="content">
                             <div>
                                 <a href="gimages/2.jpg">
                                     <img src="gimages/2_thumb.jpg" title="Pine Forest" alt="Pine Forest" class="thumb" /></a>
+                                
                             </div>
                         </div>
                         <div class="content">
                             <div>
                                 <a href="gimages/3.jpg">
                                     <img src="gimages/3_thumb.jpg" title="Pine Forest" alt="Pine Forest" class="thumb" /></a>
+                                
                             </div>
                         </div>
                         <div class="content">

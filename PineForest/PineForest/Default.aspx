@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pine.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PineForest.Default" %>
-
+<%@ Register TagPrefix="uc" TagName="banner" Src="~/UserControl/banner.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHeader" runat="server">
     <title>Pine Forest Munnar | Home</title>
 </asp:Content>
@@ -14,21 +14,7 @@
     </ul>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphBanner" runat="server">
-    <div class="banner">
-        <div class="banner-info text-center">
-           <%-- <h3>
-                <label>Hello,</label>
-                You've Reached</h3>
-            <img src="images/pineforestmunnarbanner.png" alt="pine forest munnar">
-            <span></span>
-            <ul>
-                <li><a class="scroll" href="#">HOTEL</a><i class="line"></i></li>
-                <li><a class="scroll" href="#">Room Service</a><i class="line2"></i></li>
-                <li><a class="scroll" href="#">FINE DINING</a></li>
-                <div class="clearfix"></div>
-            </ul>--%>
-        </div>
-    </div>
+    <uc:banner id="banner1" runat="server" MinValue="1" MaxValue="10" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cpContent" runat="server">
     <!---strat-date-piker---->
@@ -58,15 +44,17 @@
                 <div class="reservation">
                     <ul>
                         <li class="span1_of_1 left">
-                            <h5>Arrival</h5>
+                            <h5>From Date</h5>
                             <div class="book_date">
+
                                 <form>
                                     <input class="date" id="datepicker" type="text" value="2/08/2013" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '2/08/2013';}">
                                 </form>
                             </div>
                         </li>
                         <li class="span1_of_1 left">
-                            <h5>Depature</h5>
+                            <h5>To Date
+                            </h5>
                             <div class="book_date">
                                 <form>
                                     <input class="date" id="datepicker1" type="text" value="22/08/2013" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '22/08/2013';}">

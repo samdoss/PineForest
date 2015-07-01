@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pine.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PineForest.Default" %>
-
+<%@ Register TagPrefix="uc" TagName="banner" Src="~/UserControl/banner.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHeader" runat="server">
     <title>Pine Forest Munnar | Home</title>
 </asp:Content>
@@ -14,21 +14,7 @@
     </ul>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphBanner" runat="server">
-    <div class="banner">
-        <div class="banner-info text-center">
-            <h3>
-                <label>Hello,</label>
-                You've Reached</h3>
-            <img src="images/pineforestmunnarbanner.png" alt="pine forest munnar">
-            <span></span>
-            <ul>
-                <li><a class="scroll" href="#">HOTEL</a><i class="line"></i></li>
-                <li><a class="scroll" href="#">Room Service</a><i class="line2"></i></li>
-                <li><a class="scroll" href="#">FINE DINING</a></li>
-                <div class="clearfix"></div>
-            </ul>
-        </div>
-    </div>
+    <uc:banner id="banner1" runat="server" MinValue="1" MaxValue="10" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cpContent" runat="server">
     <!---strat-date-piker---->

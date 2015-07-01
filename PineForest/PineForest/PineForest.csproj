@@ -105,9 +105,12 @@
   <ItemGroup>
     <Content Include="AboutMunnar.aspx" />
     <Content Include="ajax-loader_dark.gif" />
+    <Content Include="bannerimage\greenbanner.png" />
+    <Content Include="bannerimage\image147 - Copy.jpg" />
+    <Content Include="bannerimage\image147.jpg" />
+    <Content Include="bannerimage\pineforestbanner2.png" />
     <Content Include="Booking.aspx" />
-    <Content Include="bootstrap.min.css" />
-    <Content Include="bootstrap.min.js" />
+    <Content Include="Booking\Login.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\JFFormStyle-1.css" />
@@ -115,12 +118,10 @@
     <Content Include="css\owl.carousel.css" />
     <Content Include="css\style.css" />
     <Content Include="Default.aspx" />
-    <Content Include="docs.min.js" />
     <Content Include="empty.gif" />
     <Content Include="facilities.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fs_img_g_bg.png" />
-    <Content Include="1233Gallery.aspx" />
     <Content Include="gimages\1.jpg" />
     <Content Include="gimages\10.jpg" />
     <Content Include="gimages\10_thumb.jpg" />
@@ -238,7 +239,6 @@
     <Content Include="html\robots.txt" />
     <Content Include="html\w3layouts-license.txt" />
     <Content Include="html\images\Thumbs.db" />
-    <Content Include="ie10-viewport-bug-workaround.js" />
     <Content Include="images\1.jpg" />
     <Content Include="images\1ser_pic4.jpg" />
     <Content Include="images\2.jpg" />
@@ -327,12 +327,29 @@
     <Content Include="robots.txt" />
     <Content Include="toolbar_fs_icon.png" />
     <Content Include="toolbar_n_icon.png" />
+    <Content Include="UserControl\banner.ascx" />
+    <Content Include="UserControl\css\demo.css" />
+    <Content Include="UserControl\css\noscript.css" />
+    <Content Include="UserControl\css\reset.css" />
+    <Content Include="UserControl\css\style.css" />
+    <Content Include="UserControl\images\Image Attribution.txt" />
+    <Content Include="UserControl\images\large\1.png" />
+    <Content Include="UserControl\images\large\2.png" />
+    <Content Include="UserControl\images\pattern.png" />
+    <Content Include="UserControl\images\previewcredits.jpg" />
+    <Content Include="UserControl\images\thumbs\1.png" />
+    <Content Include="UserControl\images\thumbs\2.png" />
+    <Content Include="UserControl\index2.html" />
+    <Content Include="UserControl\js\jquery.easing.1.3.js" />
+    <Content Include="UserControl\js\jquery.eislideshow.js" />
     <Content Include="w3layouts-license.txt" />
     <Content Include="Web.config" />
     <Content Include="Pine.Master" />
     <Content Include="images\Thumbs.db" />
     <Content Include="Forest.Master" />
     <None Include="Properties\PublishProfiles\PineForest.pubxml" />
+    <Content Include="UserControl\images\Thumbs.db" />
+    <Content Include="UserControl\js\jquery.eislideshow.js.bak" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -354,6 +371,13 @@
     </Compile>
     <Compile Include="Booking.aspx.designer.cs">
       <DependentUpon>Booking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Booking\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -383,13 +407,6 @@
     <Compile Include="Forest.Master.designer.cs">
       <DependentUpon>Forest.Master</DependentUpon>
     </Compile>
-    <Compile Include="1233Gallery.aspx.cs">
-      <DependentUpon>1233Gallery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="1233Gallery.aspx.designer.cs">
-      <DependentUpon>1233Gallery.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -408,6 +425,13 @@
       <DependentUpon>Gallery.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControl\banner.ascx.cs">
+      <DependentUpon>banner.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\banner.ascx.designer.cs">
+      <DependentUpon>banner.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
