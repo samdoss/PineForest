@@ -33,6 +33,13 @@ F:\currentproject\PineForest\PineForest\PineForest\bin\PineForest.dll
 F:\currentproject\PineForest\PineForest\PineForest\bin\PineForest.pdb
 F:\currentproject\PineForest\PineForest\PineForest\bin\Microsoft.Web.Infrastructure.dll
 F:\currentproject\PineForest\PineForest\PineForest\bin\Microsoft.Web.Infrastructure.xml
-F:\currentproject\PineForest\PineForest\PineForest\obj\Debug\PineForest.csprojResolveAssemblyReference.cache
 F:\currentproject\PineForest\PineForest\PineForest\obj\Debug\PineForest.dll
 F:\currentproject\PineForest\PineForest\PineForest\obj\Debug\PineForest.pdb
+F:\currentproject\PineForest\PineForest\PineForest\obj\Debug\PineForest.csprojResolveAssemblyReference.cache
+F:\currentproject\PineForest\PineForest\PineForest\bin\PineForest.DataLayer.dll
+F:\currentproject\PineForest\PineForest\PineForest\bin\PineForest.CommonLayer.dll
+F:\currentproject\PineForest\PineForest\PineForest\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+F:\currentproject\PineForest\PineForest\PineForest\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+F:\currentproject\PineForest\PineForest\PineForest\bin\Microsoft.Practices.ObjectBuilder.dll
+F:\currentproject\PineForest\PineForest\PineForest\bin\PineForest.DataLayer.pdb
+F:\currentproject\PineForest\PineForest\PineForest\bin\PineForest.CommonLayer.pdb

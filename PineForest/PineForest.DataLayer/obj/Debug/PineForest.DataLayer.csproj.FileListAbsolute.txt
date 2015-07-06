@@ -1,0 +1,10 @@
+F:\currentproject\PineForest\PineForest\PineForest.DataLayer\bin\Debug\PineForest.DataLayer.dll
+F:\currentproject\PineForest\PineForest\PineForest.DataLayer\bin\Debug\PineForest.DataLayer.pdb
+F:\currentproject\PineForest\PineForest\PineForest.DataLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+F:\currentproject\PineForest\PineForest\PineForest.DataLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+F:\currentproject\PineForest\PineForest\PineForest.DataLayer\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+F:\currentproject\PineForest\PineForest\PineForest.DataLayer\bin\Debug\PineForest.CommonLayer.dll
+F:\currentproject\PineForest\PineForest\PineForest.DataLayer\bin\Debug\PineForest.CommonLayer.pdb
+F:\currentproject\PineForest\PineForest\PineForest.DataLayer\obj\Debug\PineForest.DataLayer.csprojResolveAssemblyReference.cache
+F:\currentproject\PineForest\PineForest\PineForest.DataLayer\obj\Debug\PineForest.DataLayer.dll
+F:\currentproject\PineForest\PineForest\PineForest.DataLayer\obj\Debug\PineForest.DataLayer.pdb

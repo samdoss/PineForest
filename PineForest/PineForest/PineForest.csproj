@@ -110,7 +110,7 @@
     <Content Include="bannerimage\image147.jpg" />
     <Content Include="bannerimage\pineforestbanner2.png" />
     <Content Include="Booking.aspx" />
-    <Content Include="Booking\Login.aspx" />
+    <Content Include="Booking\Registration.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\JFFormStyle-1.css" />
@@ -323,6 +323,7 @@
     <Content Include="js\responsiveslides.min.js" />
     <Content Include="nextImgBtn.png" />
     <Content Include="Gallery.aspx" />
+    <Content Include="PineLogin.aspx" />
     <Content Include="prevImgBtn.png" />
     <Content Include="robots.txt" />
     <Content Include="toolbar_fs_icon.png" />
@@ -372,12 +373,12 @@
     <Compile Include="Booking.aspx.designer.cs">
       <DependentUpon>Booking.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Booking\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="Booking\Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Booking\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="Booking\Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -424,6 +425,13 @@
     <Compile Include="Gallery.aspx.designer.cs">
       <DependentUpon>Gallery.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PineLogin.aspx.cs">
+      <DependentUpon>PineLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PineLogin.aspx.designer.cs">
+      <DependentUpon>PineLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControl\banner.ascx.cs">
       <DependentUpon>banner.ascx</DependentUpon>
@@ -433,7 +441,12 @@
       <DependentUpon>banner.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\PineForest.DataLayer\PineForest.DataLayer.csproj">
+      <Project>{47b89661-85d4-4aa2-a3c1-d6e902f47603}</Project>
+      <Name>PineForest.DataLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

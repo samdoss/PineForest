@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pine.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PineForest.Default" %>
+
 <%@ Register TagPrefix="uc" TagName="banner" Src="~/UserControl/banner.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHeader" runat="server">
     <title>Pine Forest Munnar | Home</title>
@@ -7,14 +8,14 @@
     <ul>
         <li class="active"><a class="scroll" href="Default.aspx">HOME</a></li>
         <li><a class="scroll" href="facilities.aspx">FACILITIES</a></li>
-        <li><a class="scroll" href="aboutmunnar.aspx">ABOUT MUNNAR</a></li>        
-        <li><a class="scroll" href="gallery.aspx">GALLERY</a></li>        
+        <li><a class="scroll" href="aboutmunnar.aspx">ABOUT MUNNAR</a></li>
+        <li><a class="scroll" href="gallery.aspx">GALLERY</a></li>
         <li><a class="scroll" href="booking.aspx">BOOKING</a></li>
         <li><a class="scroll" href="contact.aspx">CONTACT US</a></li>
     </ul>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphBanner" runat="server">
-    <uc:banner id="banner1" runat="server" MinValue="1" MaxValue="10" />
+    <uc:banner ID="banner1" runat="server" MinValue="1" MaxValue="10" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cpContent" runat="server">
     <!---strat-date-piker---->
@@ -47,18 +48,17 @@
                             <h5>From Date</h5>
                             <div class="book_date">
 
-                                <form>
-                                    <input class="date" id="datepicker" type="text" value="2/08/2013" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '2/08/2013';}">
-                                </form>
+                                <input id="datepicker" type="text" value="2/08/2015" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '2/08/2015';}" />
+
                             </div>
                         </li>
                         <li class="span1_of_1 left">
                             <h5>To Date
                             </h5>
                             <div class="book_date">
-                                <form>
-                                    <input class="date" id="datepicker1" type="text" value="22/08/2013" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '22/08/2013';}">
-                                </form>
+
+                                <input class="date" id="datepicker1" type="text" value="12/08/2015" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '12/08/2015';}" />
+
                             </div>
                         </li>
                         <li class="span1_of_1">
@@ -75,9 +75,7 @@
                         </li>
                         <li class="span1_of_3">
                             <div class="date_btn">
-                                <form>
-                                    <input type="submit" value="View Prices" />
-                                </form>
+                                <asp:Button ID="btnSubmit" Text="View Available" runat="server" OnClick="btnSubmit_Click" />                          
                             </div>
                         </li>
                         <div class="clearfix"></div>
@@ -87,7 +85,7 @@
             <div class="clearfix"></div>
         </div>
     </div>
-    
+
     <!---->
     <div class="package text-center">
         <div class="container">

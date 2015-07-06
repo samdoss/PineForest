@@ -1,0 +1,7 @@
+F:\currentproject\PineForest\PineForest\PineForest.CommonLayer\bin\Debug\PineForest.CommonLayer.dll
+F:\currentproject\PineForest\PineForest\PineForest.CommonLayer\bin\Debug\PineForest.CommonLayer.pdb
+F:\currentproject\PineForest\PineForest\PineForest.CommonLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+F:\currentproject\PineForest\PineForest\PineForest.CommonLayer\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+F:\currentproject\PineForest\PineForest\PineForest.CommonLayer\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+F:\currentproject\PineForest\PineForest\PineForest.CommonLayer\obj\Debug\PineForest.CommonLayer.dll
+F:\currentproject\PineForest\PineForest\PineForest.CommonLayer\obj\Debug\PineForest.CommonLayer.pdb

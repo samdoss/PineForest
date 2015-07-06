@@ -87,14 +87,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <a href="http://www.pineforestmunnar.com/contact.html">READ MORE</a>
                         </div>
                         <div class="member">
-                            <h4>MEMBERS AREA</h4>
-                            <form>
-                                <p>Username</p>
-                                <input type="text" placeholder="" required />
-                                <p>Password</p>
-                                <input type="password" placeholder="" required />
-                                <input type="submit" value="LOGIN" />
-                            </form>
+                           &nbsp;
                         </div>
                         <div class="clearfix"></div>
                     </div>
