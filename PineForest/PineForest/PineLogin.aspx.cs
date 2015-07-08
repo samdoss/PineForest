@@ -19,12 +19,22 @@ namespace PineForest
 
         protected void btnNewUser_Click(object sender, EventArgs e)
         {
-
+            mv1.ActiveViewIndex = 1;
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnCreate_Click(object sender, EventArgs e)
+        {
+            mv1.ActiveViewIndex = 2;
+        }
+
+        protected void btnAuthenticationCode_Click(object sender, EventArgs e)
+        {
+            mv1.ActiveViewIndex = 0;
         }
     }
 }

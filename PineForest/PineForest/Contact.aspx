@@ -7,9 +7,9 @@
         <li><a class="scroll" href="Default.aspx">HOME</a></li>
         <li><a class="scroll" href="facilities.aspx">FACILITIES</a></li>
         <li><a class="scroll" href="aboutmunnar.aspx">ABOUT MUNNAR</a></li>
-        <li><a class="scroll" href="gallery.aspx">GALLERY</a></li>
-        <li><a class="scroll" href="booking.aspx">BOOKING</a></li>
+        <li><a class="scroll" href="gallery.aspx">GALLERY</a></li>        
         <li class="active"><a class="scroll" href="contact.aspx">CONTACT US</a></li>
+        <li><a class="scroll" href="pinelogin.aspx">LOGIN</a></li>
     </ul>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphBanner" runat="server">
