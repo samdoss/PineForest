@@ -182,5 +182,97 @@ namespace PineForest.DataLayer.PineForest
                 return false;
             }
         }
+
+        internal TransactionResult AddEditUser(Database db, DbTransaction transaction)
+        {
+            try
+            {
+                int returnValue = 0;
+                string sqlCommand = "spAddEditUser";
+                DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
+
+                //LoginID	int	Unchecked
+                //RoleID	int	Unchecked
+                //LoginMailID	varchar(300)	Checked
+                //LoginMobileNo	varchar(20)	Checked
+                //IsAuthenticated	bit	Checked
+                //AuthenticationCode	varchar(8)	Checked
+                //AuthenticationDate	date	Checked
+                //LogininIpAddress	varchar(20)	Checked
+                //geolocation	varchar(30)	Checked
+
+                db.AddInParameter(dbCommand, "LoginID", DbType.Int32, LoginID);
+                db.AddInParameter(dbCommand, "RoleID", DbType.Int32, RoleID);
+                db.AddInParameter(dbCommand, "LoginMailID", DbType.String, LoginMailID);
+                db.AddInParameter(dbCommand, "LoginMobileNo", DbType.String, LoginMobileNo);
+                db.AddInParameter(dbCommand, "IsAuthenticated", DbType.Boolean, IsAuthenticated);
+                db.AddInParameter(dbCommand, "AuthenticationCode", DbType.String, GenerateAuthCode());
+                db.AddInParameter(dbCommand, "LogininIpAddress", DbType.String, LogininIpAddress);
+                db.AddInParameter(dbCommand, "geolocation", DbType.String, GeoLocation);
+
+                db.AddInParameter(dbCommand, "AddEditOption", DbType.Int16, AddEditOption);
+
+                db.AddParameter(dbCommand, "Return Value", DbType.Int32, ParameterDirection.ReturnValue, "Return Value",
+                                DataRowVersion.Default, returnValue);
+
+                db.ExecuteNonQuery(dbCommand, transaction);
+                returnValue = (Int32)db.GetParameterValue(dbCommand, "Return Value");
+
+                LoginID = returnValue;
+
+                if (returnValue == -1)
+                {
+                    if (AddEditOption == 1)
+                        return new TransactionResult(TransactionStatus.Failure, "Failure Updating");
+                    else
+                        return new TransactionResult(TransactionStatus.Failure, "Failure Adding");
+                }
+                else
+                {
+                    if (AddEditOption == 1)
+                        return new TransactionResult(TransactionStatus.Success, "Successfully Updated");
+                    else
+                        return new TransactionResult(TransactionStatus.Success, "Successfully Added");
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.LogErrorMessageToDB("UserDL.cs", "", "AddEditUser", ex.Message, new PineConnection());
+                return new TransactionResult(TransactionStatus.Failure, "Failure Updating");
+            }
+        }
+
+        public char GenerateLetter()
+        {
+            Random randomNumber = new Random();
+
+            int number = randomNumber.Next(0, 26);
+            char letter = (char)('a' + number);
+            return letter;
+        }
+
+        public string GenerateAuthCode()
+        {
+            bool codeExists = false;
+
+            string code = GenerateLetter().ToString();
+
+            do
+            {
+                code += Guid.NewGuid().ToString("N").Substring(0, 13);
+
+                return code += GenerateLetter().ToString();
+
+                //YourDBContext dbContext = new YourDBContext();
+
+                //var Exists = dbContext.products.FirstOrDefault(m => m.barcode == code);
+
+                //codeExists = Exists == null ? false : true;
+            }
+            while (codeExists);
+
+            return code;
+
+        }
     }
 }
