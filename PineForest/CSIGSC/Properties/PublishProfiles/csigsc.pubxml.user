@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>F:\currentproject\csigsc\</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ajax-loader_dark.gif">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="bin/CSIGSC.dll">
+      <publishTime>07/11/2015 10:55:02</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/08/2013 15:15:08</publishTime>
+    </File>
+    <File Include="css/bootstrap.css">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="css/JFFormStyle-1.css">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="css/jquery-ui.css">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="css/owl.carousel.css">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="css/style.css">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="empty.gif">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="fs_img_g_bg.png">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="img/1920/blue.jpg">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="img/1920/purple.jpg">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="img/1920/red.jpg">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="img/a11.png">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="img/a21.png">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="img/b05.png">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="img/b21.png">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="img/home/01.jpg">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="img/home/02.jpg">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="img/home/03.jpg">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="img/home/04.jpg">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="jquery.easing.1.3.js">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="js/JFCore.js">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="js/JFForms.js">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="js/jquery-1.9.1.min.js">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="js/jquery-ui.js">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="js/jquery.flexisel.js">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="js/jquery.min.js">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="js/jssor.slider.mini.js">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="js/owl.carousel.js">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="js/responsiveslides.min.js">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="nextImgBtn.png">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="prevImgBtn.png">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="toolbar_fs_icon.png">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="toolbar_n_icon.png">
+      <publishTime>07/11/2015 10:04:39</publishTime>
+    </File>
+    <File Include="vbs_2015/VBS2015_1.html">
+      <publishTime>07/11/2015 10:49:12</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,7 @@
+F:\currentproject\PineForest\PineForest\CSIGSC\bin\CSIGSC.dll
+F:\currentproject\PineForest\PineForest\CSIGSC\bin\CSIGSC.pdb
+F:\currentproject\PineForest\PineForest\CSIGSC\bin\Microsoft.Web.Infrastructure.dll
+F:\currentproject\PineForest\PineForest\CSIGSC\bin\Microsoft.Web.Infrastructure.xml
+F:\currentproject\PineForest\PineForest\CSIGSC\obj\Release\CSIGSC.csprojResolveAssemblyReference.cache
+F:\currentproject\PineForest\PineForest\CSIGSC\obj\Release\CSIGSC.dll
+F:\currentproject\PineForest\PineForest\CSIGSC\obj\Release\CSIGSC.pdb

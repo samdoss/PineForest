@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
-namespace PineForest.DataLayer.PineForest
+namespace PineForest.DataLayer
 {
     public class PineLoginDL : CommonForAllDL
     {
@@ -33,7 +33,10 @@ namespace PineForest.DataLayer.PineForest
         public string LogininIpAddress { get; set; }
         public string GeoLocation { get; set; }
 
+        public PineLoginDL()
+        {
 
+        }
         /// <summary>
         ///Commit
         /// </summary>
@@ -52,7 +55,7 @@ namespace PineForest.DataLayer.PineForest
                     {
                         case ScreenMode.Add:
                             //Adding Or Editing User
-                            result = AddEditLogin(db, transaction);
+                            //result = AddEditLogin(db, transaction);
                             if (result.Status == TransactionStatus.Failure)
                             {
                                 transaction.Rollback();
@@ -60,7 +63,7 @@ namespace PineForest.DataLayer.PineForest
                             }
                             break;
                         case ScreenMode.Edit:
-                            result = UpdateLogin(db, transaction);
+                            //result = UpdateLogin(db, transaction);
                             if (result.Status == TransactionStatus.Failure)
                             {
                                 transaction.Rollback();
@@ -69,7 +72,7 @@ namespace PineForest.DataLayer.PineForest
 
                             break;
                         case ScreenMode.Delete:
-                            result = DeleteLogin(db, transaction);
+                            //result = DeleteLogin(db, transaction);
                             if (result.Status == TransactionStatus.Failure)
                             {
                                 transaction.Rollback();

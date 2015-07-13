@@ -28,3 +28,10 @@ D:\CurrectProject\WebPineForest\pineforest\PineForest\CSIGSC\bin\System.Net.Http
 D:\CurrectProject\WebPineForest\pineforest\PineForest\CSIGSC\obj\Debug\CSIGSC.csprojResolveAssemblyReference.cache
 D:\CurrectProject\WebPineForest\pineforest\PineForest\CSIGSC\obj\Debug\CSIGSC.dll
 D:\CurrectProject\WebPineForest\pineforest\PineForest\CSIGSC\obj\Debug\CSIGSC.pdb
+F:\currentproject\PineForest\PineForest\CSIGSC\bin\CSIGSC.dll
+F:\currentproject\PineForest\PineForest\CSIGSC\bin\CSIGSC.pdb
+F:\currentproject\PineForest\PineForest\CSIGSC\bin\Microsoft.Web.Infrastructure.dll
+F:\currentproject\PineForest\PineForest\CSIGSC\bin\Microsoft.Web.Infrastructure.xml
+F:\currentproject\PineForest\PineForest\CSIGSC\obj\Debug\CSIGSC.csprojResolveAssemblyReference.cache
+F:\currentproject\PineForest\PineForest\CSIGSC\obj\Debug\CSIGSC.dll
+F:\currentproject\PineForest\PineForest\CSIGSC\obj\Debug\CSIGSC.pdb

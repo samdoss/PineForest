@@ -122,6 +122,7 @@
     <Content Include="facilities.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fs_img_g_bg.png" />
+    <Content Include="GetClientDetails.html" />
     <Content Include="gimages\1.jpg" />
     <Content Include="gimages\10.jpg" />
     <Content Include="gimages\10_thumb.jpg" />

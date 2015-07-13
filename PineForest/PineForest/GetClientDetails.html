@@ -1,0 +1,36 @@
+﻿
+<!DOCTYPE html>
+<html ng-app="geo">
+<body>
+    <div ng-controller="geoCtrl">
+        <p ng-bind="ip"></p>
+        <p ng-bind="hostname"></p>
+        <p ng-bind="loc"></p>
+        <p ng-bind="org"></p>
+        <p ng-bind="city"></p>
+        <p ng-bind="region"></p>
+        <p ng-bind="country"></p>
+        <p ng-bind="postal"></p>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.12/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.12/angular-route.min.js"></script>
+    <script>
+	'use strict';
+	var geo = angular.module('geo', [])
+	.controller('geoCtrl', ['$scope', '$http', function($scope, $http) {
+		$http.jsonp('http://ipinfo.io/?callback=JSON_CALLBACK')
+			.success(function(data) {
+			$scope.ip = data.ip;
+			$scope.hostname = data.hostname;
+			$scope.loc = data.loc; //lat-longtitude
+			$scope.org = data.org; //organization
+			$scope.city = data.city;
+			$scope.region = data.region; //state
+			$scope.country = data.country;
+			$scope.postal = data.postal; //city area code
+		});
+	}]);
+    </script>
+</body>
+</html>

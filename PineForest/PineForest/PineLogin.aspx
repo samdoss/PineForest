@@ -16,6 +16,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cphBanner" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cpContent" runat="server">
+
     <div class="contact-bg2">
         <div class="container">
             <asp:MultiView ID="mv1" runat="server" ActiveViewIndex="0" EnableViewState="true" ViewStateMode="Enabled" Visible="true">
@@ -33,7 +34,9 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>&nbsp;
+                                    <td>                                        
+                                        <asp:HiddenField ID="hfIpAddress" runat="server" />
+                                        <asp:HiddenField ID="hfGeoLocation" runat="server" />
                                     </td>
                                     <td style="text-align: left; vertical-align: top;">
                                         <asp:Button ID="btnNewUser" Text="New User" runat="server" OnClick="btnNewUser_Click" />
@@ -44,6 +47,8 @@
                             </table>
                         </div>
                     </div>
+
+
                 </asp:View>
                 <asp:View ID="view2" runat="server">
                     <div class="booking">
