@@ -38,6 +38,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=1.0.20229.20821, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdpartyDLL\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -327,6 +331,16 @@
     <Content Include="PineLogin.aspx" />
     <Content Include="prevImgBtn.png" />
     <Content Include="robots.txt" />
+    <Content Include="ThirdpartyDLL\AjaxControlToolkit.dll" />
+    <Content Include="ThirdpartyDLL\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="ThirdpartyDLL\Microsoft.Office.Tools.Excel.dll" />
+    <Content Include="ThirdpartyDLL\Newtonsoft.Json.dll" />
+    <Content Include="ThirdpartyDLL\Newtonsoft.Json.xml" />
+    <Content Include="ThirdpartyDLL\PushSharp.Android.dll" />
+    <Content Include="ThirdpartyDLL\PushSharp.Apple.dll" />
+    <Content Include="ThirdpartyDLL\PushSharp.Core.dll" />
+    <Content Include="ThirdpartyDLL\PushSharp.Windows.dll" />
+    <Content Include="ThirdpartyDLL\PushSharp.WindowsPhone.dll" />
     <Content Include="toolbar_fs_icon.png" />
     <Content Include="toolbar_n_icon.png" />
     <Content Include="UserControl\banner.ascx" />
@@ -443,11 +457,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PineForest.CommonLayer\PineForest.CommonLayer.csproj">
+      <Project>{33ab2351-636a-4e39-b2d6-5181fc8d4c7d}</Project>
+      <Name>PineForest.CommonLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PineForest.DataLayer\PineForest.DataLayer.csproj">
       <Project>{47b89661-85d4-4aa2-a3c1-d6e902f47603}</Project>
       <Name>PineForest.DataLayer</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

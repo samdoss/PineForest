@@ -22,6 +22,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager ID="smPineForest" runat="server" AjaxFrameworkMode="Enabled"></asp:ScriptManager>
         <div>
             <!--header starts-->
             <div class="header">
@@ -87,7 +88,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <a href="http://www.pineforestmunnar.com/contact.html">READ MORE</a>
                         </div>
                         <div class="member">
-                           &nbsp;
+                            &nbsp;
                         </div>
                         <div class="clearfix"></div>
                     </div>

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using PineForest.DataLayer;
+using PineForest.CommonLayer;
 using System.Net;
 using System.Text;
 using System.IO;
@@ -56,12 +57,47 @@ namespace PineForest
 
         private bool CheckEmailIDAvailable()
         {
-
-            return false;
+            pineLoginDL  =new PineLoginDL();
+            return pineLoginDL.GetLoginAuthentication(txtLogin.Text);
+            //return false;
         }
 
         protected void btnCreate_Click(object sender, EventArgs e)
         {
+            if (txtEmailIDorMobileNo.Text != "")
+            {
+                if (CheckEmailIDAvailable())
+                {
+
+                }
+
+                pineLoginDL = new PineLoginDL();
+                pineLoginDL.LoginID = 0;
+                pineLoginDL.RoleID = 2;
+                if (txtEmailIDorMobileNo.Text.Contains("@"))
+                {
+                    pineLoginDL.LoginMailID = txtEmailIDorMobileNo.Text;
+                    pineLoginDL.LoginMobileNo = string.Empty;
+                }
+                else
+                {
+                    pineLoginDL.LoginMailID = string.Empty;
+                    pineLoginDL.LoginMobileNo = txtEmailIDorMobileNo.Text;
+                }
+                
+                pineLoginDL.IsAuthenticated = false;
+                pineLoginDL.AuthenticationCode = "";
+                pineLoginDL.AuthenticationDate = DateTime.Now.Date;
+                pineLoginDL.LogininIpAddress = hfIpAddress.Value;
+                pineLoginDL.GeoLocation = hfGeoLocation.Value;
+
+                pineLoginDL.ScreenMode = ScreenMode.Add;
+                pineLoginDL.Commit();
+
+
+            }
+
+
             mv1.ActiveViewIndex = 2;
         }
 

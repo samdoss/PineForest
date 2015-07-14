@@ -49,6 +49,24 @@ namespace PineForest {
         protected global::System.Web.UI.WebControls.TextBox txtLogin;
         
         /// <summary>
+        /// ftbeLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender ftbeLogin;
+        
+        /// <summary>
+        /// vceLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ValidatorCalloutExtender vceLogin;
+        
+        /// <summary>
         /// hfIpAddress control.
         /// </summary>
         /// <remarks>
@@ -85,6 +103,24 @@ namespace PineForest {
         protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
+        /// lblLoginMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLoginMsg;
+        
+        /// <summary>
+        /// rfvLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLogin;
+        
+        /// <summary>
         /// view2 control.
         /// </summary>
         /// <remarks>
@@ -112,6 +148,24 @@ namespace PineForest {
         protected global::System.Web.UI.WebControls.TextBox txtEmailIDorMobileNo;
         
         /// <summary>
+        /// fteEmailIDorMobileNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender fteEmailIDorMobileNo;
+        
+        /// <summary>
+        /// vceEmailIDorMobileNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ValidatorCalloutExtender vceEmailIDorMobileNo;
+        
+        /// <summary>
         /// btnCreate control.
         /// </summary>
         /// <remarks>
@@ -119,6 +173,24 @@ namespace PineForest {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCreate;
+        
+        /// <summary>
+        /// lblNewUserMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNewUserMsg;
+        
+        /// <summary>
+        /// rfvEmailIDorMobileNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmailIDorMobileNo;
         
         /// <summary>
         /// view3 control.
@@ -148,6 +220,24 @@ namespace PineForest {
         protected global::System.Web.UI.WebControls.TextBox txtAuthenticationCode;
         
         /// <summary>
+        /// fteAuthenticationCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender fteAuthenticationCode;
+        
+        /// <summary>
+        /// vceAuthenticationCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ValidatorCalloutExtender vceAuthenticationCode;
+        
+        /// <summary>
         /// btnAuthenticationCode control.
         /// </summary>
         /// <remarks>
@@ -155,5 +245,23 @@ namespace PineForest {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAuthenticationCode;
+        
+        /// <summary>
+        /// lblShowAuthenticationMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblShowAuthenticationMsg;
+        
+        /// <summary>
+        /// rfvAuthenticationCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAuthenticationCode;
     }
 }
