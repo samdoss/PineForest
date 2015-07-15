@@ -85,15 +85,6 @@ namespace PineForest {
         protected global::System.Web.UI.WebControls.HiddenField hfGeoLocation;
         
         /// <summary>
-        /// btnNewUser control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNewUser;
-        
-        /// <summary>
         /// btnSubmit control.
         /// </summary>
         /// <remarks>
@@ -101,6 +92,15 @@ namespace PineForest {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSubmit;
+        
+        /// <summary>
+        /// btnNewUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnNewUser;
         
         /// <summary>
         /// lblLoginMsg control.
@@ -200,6 +200,15 @@ namespace PineForest {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View view3;
+        
+        /// <summary>
+        /// hfLoginID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfLoginID;
         
         /// <summary>
         /// lblAuthenticationCode control.

@@ -55,7 +55,7 @@ namespace PineForest.DataLayer
                     {
                         case ScreenMode.Add:
                             //Adding Or Editing User
-                            //result = AddEditLogin(db, transaction);
+                            result = AddEditLogin(db, transaction);
                             if (result.Status == TransactionStatus.Failure)
                             {
                                 transaction.Rollback();
@@ -186,30 +186,35 @@ namespace PineForest.DataLayer
             }
         }
 
-        internal TransactionResult AddEditUser(Database db, DbTransaction transaction)
+        internal TransactionResult AddEditLogin(Database db, DbTransaction transaction)
         {
             try
             {
                 int returnValue = 0;
-                string sqlCommand = "spAddEditUser";
+                string sqlCommand = "spAddEditLogin";
                 DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
 
-                //LoginID	int	Unchecked
-                //RoleID	int	Unchecked
-                //LoginMailID	varchar(300)	Checked
-                //LoginMobileNo	varchar(20)	Checked
-                //IsAuthenticated	bit	Checked
-                //AuthenticationCode	varchar(8)	Checked
-                //AuthenticationDate	date	Checked
-                //LogininIpAddress	varchar(20)	Checked
-                //geolocation	varchar(30)	Checked
-
+                if (AddEditOption != 1)
+                {
+                    string auCode = GenerateAuthCode();
+                    auCode = auCode.Replace("0", "");
+                    auCode = auCode.Replace("o", "");
+                    auCode = auCode.Replace("O", "");
+                    auCode = auCode.Replace("1", "");
+                    auCode = auCode.Replace("L", "");
+                    auCode = auCode.Replace("l", "");
+                    if (auCode.Length > 7)
+                    {
+                        auCode = auCode.Remove(6);
+                    }
+                    AuthenticationCode = auCode;
+                }
                 db.AddInParameter(dbCommand, "LoginID", DbType.Int32, LoginID);
                 db.AddInParameter(dbCommand, "RoleID", DbType.Int32, RoleID);
                 db.AddInParameter(dbCommand, "LoginMailID", DbType.String, LoginMailID);
                 db.AddInParameter(dbCommand, "LoginMobileNo", DbType.String, LoginMobileNo);
                 db.AddInParameter(dbCommand, "IsAuthenticated", DbType.Boolean, IsAuthenticated);
-                db.AddInParameter(dbCommand, "AuthenticationCode", DbType.String, GenerateAuthCode());
+                db.AddInParameter(dbCommand, "AuthenticationCode", DbType.String, AuthenticationCode);
                 db.AddInParameter(dbCommand, "LogininIpAddress", DbType.String, LogininIpAddress);
                 db.AddInParameter(dbCommand, "geolocation", DbType.String, GeoLocation);
 

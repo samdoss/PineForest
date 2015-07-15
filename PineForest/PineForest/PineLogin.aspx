@@ -26,7 +26,7 @@
                     <div class="booking">
                         <h3>Login</h3>
                         <div class="col-md-8 booking-form" style="text-align: center;">
-                            <table border="0" style="width: 100%; margin-left: 200px; height: 300px; max-height: 300px; min-height: 200px;">                                
+                            <table border="0" style="width: 100%; margin-left: 200px; height: 300px; max-height: 300px; min-height: 200px;">
                                 <tr>
                                     <td style="width: 250px">
                                         <asp:Label ID="lblLogin" Text="Email id / Mobile No:" runat="server"></asp:Label>
@@ -45,9 +45,9 @@
                                         <asp:HiddenField ID="hfGeoLocation" runat="server" />
                                     </td>
                                     <td style="text-align: left; vertical-align: top;">
-                                        <asp:Button ID="btnNewUser" Text="New User" runat="server" OnClick="btnNewUser_Click" />
-                                        &nbsp; &nbsp; &nbsp;
                                         <asp:Button ID="btnSubmit" Text="Login" runat="server" ValidationGroup="ValidateLogin" CausesValidation="true" OnClick="btnSubmit_Click" />
+                                        &nbsp; &nbsp; &nbsp;
+                                        <asp:Button ID="btnNewUser" Text="New User" runat="server" OnClick="btnNewUser_Click" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -58,7 +58,7 @@
                                 <tr>
                                     <td colspan="2" style="width: 100%; text-align: left">
                                         <asp:RequiredFieldValidator ID="rfvLogin" runat="server" ValidationGroup="ValidateLogin"
-                                            ControlToValidate="txtLogin" Display="None"  ErrorMessage="Please Enter the EmailID/MobileNo" SetFocusOnError="True">
+                                            ControlToValidate="txtLogin" Display="None" ErrorMessage="Please Enter the EmailID/MobileNo" SetFocusOnError="True">
                                             <%--<li style="list-style-type: circle">
                                                 <asp:Label ID="lblLoginValidation" runat="server" ForeColor="red" Text="Please Enter the EmailID/MobileNo"></asp:Label></li>--%>
                                         </asp:RequiredFieldValidator>
@@ -91,7 +91,7 @@
                                     <td>&nbsp;
                                     </td>
                                     <td style="text-align: left; vertical-align: top;">
-                                        <asp:Button ID="btnCreate" Text="Create Account" runat="server"  ValidationGroup="ValidateEmailIDorMobileNo" CausesValidation="true"  OnClick="btnCreate_Click" />
+                                        <asp:Button ID="btnCreate" Text="Create Account" runat="server" ValidationGroup="ValidateEmailIDorMobileNo" CausesValidation="true" OnClick="btnCreate_Click" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -102,7 +102,7 @@
                                 <tr>
                                     <td colspan="2" style="width: 100%; text-align: left">
                                         <asp:RequiredFieldValidator ID="rfvEmailIDorMobileNo" runat="server" ValidationGroup="ValidateEmailIDorMobileNo"
-                                            ControlToValidate="txtEmailIDorMobileNo" Display="None"  ErrorMessage="Please Enter the EmailID/MobileNo" SetFocusOnError="True">
+                                            ControlToValidate="txtEmailIDorMobileNo" Display="None" ErrorMessage="Please Enter the EmailID/MobileNo" SetFocusOnError="True">
                                             <%--<li style="list-style-type: circle">
                                                 <asp:Label ID="lblLoginValidation" runat="server" ForeColor="red" Text="Please Enter the EmailID/MobileNo"></asp:Label></li>--%>
                                         </asp:RequiredFieldValidator>
@@ -119,6 +119,7 @@
                             <table border="0" style="width: 100%; margin-left: 200px; height: 300px; max-height: 300px; min-height: 200px;">
                                 <tr>
                                     <td style="width: 250px">
+                                        <asp:HiddenField ID="hfLoginID" runat="server" Visible="false" Value="0" />
                                         <asp:Label ID="lblAuthenticationCode" Text="Authentication Code:" runat="server"></asp:Label>
                                     </td>
                                     <td>
@@ -139,13 +140,13 @@
                                 <tr>
                                     <td colspan="2">
                                         <p style="color: red; font-size: small;">you will receive mail or sms to enter the authentication code.</p>
-                                        <asp:Label ID="lblShowAuthenticationMsg" runat="server"></asp:Label>
+                                        <asp:Label ID="lblShowAuthenticationMsg" style="color: red; font-size: small;" runat="server"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2" style="width: 100%; text-align: left">
                                         <asp:RequiredFieldValidator ID="rfvAuthenticationCode" runat="server" ValidationGroup="ValidateAuthenticationCode"
-                                            ControlToValidate="txtAuthenticationCode" Display="None"  ErrorMessage="Please Enter the Authentication Code" SetFocusOnError="True">                                           
+                                            ControlToValidate="txtAuthenticationCode" Display="None" ErrorMessage="Please Enter the Authentication Code" SetFocusOnError="True">                                           
                                         </asp:RequiredFieldValidator>
                                     </td>
                                 </tr>

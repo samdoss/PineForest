@@ -16,6 +16,7 @@ namespace PineForest
     {
 
         PineLoginDL pineLoginDL = new PineLoginDL();
+        string authenticationCode = string.Empty;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -39,25 +40,21 @@ namespace PineForest
             {
                 if (CheckEmailIDAvailable())
                 {
+                    if (pineLoginDL.IsAuthenticated)
+                    {
 
+                    }
+                    else
+                    {
+                        mv1.ActiveViewIndex = 2;
+                    }
                 }
-
-                pineLoginDL = new PineLoginDL();
-                pineLoginDL.LoginID = 0;
-                pineLoginDL.RoleID = 2;
-                pineLoginDL.LoginMailID = "";
-                pineLoginDL.LoginMobileNo = "";
-                pineLoginDL.IsAuthenticated = false;
-                pineLoginDL.AuthenticationCode = "";
-                pineLoginDL.AuthenticationDate = null;
-                pineLoginDL.LogininIpAddress = "";
-                pineLoginDL.GeoLocation = "";
             }
         }
 
         private bool CheckEmailIDAvailable()
         {
-            pineLoginDL  =new PineLoginDL();
+            pineLoginDL = new PineLoginDL();
             return pineLoginDL.GetLoginAuthentication(txtLogin.Text);
             //return false;
         }
@@ -68,7 +65,10 @@ namespace PineForest
             {
                 if (CheckEmailIDAvailable())
                 {
+                    if (txtEmailIDorMobileNo.Text.ToLower() == pineLoginDL.LoginMailID || txtEmailIDorMobileNo.Text.ToLower() == pineLoginDL.LoginMobileNo)
+                    {
 
+                    }
                 }
 
                 pineLoginDL = new PineLoginDL();
@@ -84,26 +84,67 @@ namespace PineForest
                     pineLoginDL.LoginMailID = string.Empty;
                     pineLoginDL.LoginMobileNo = txtEmailIDorMobileNo.Text;
                 }
-                
+
                 pineLoginDL.IsAuthenticated = false;
                 pineLoginDL.AuthenticationCode = "";
                 pineLoginDL.AuthenticationDate = DateTime.Now.Date;
                 pineLoginDL.LogininIpAddress = hfIpAddress.Value;
                 pineLoginDL.GeoLocation = hfGeoLocation.Value;
 
+                TransactionResult result;
                 pineLoginDL.ScreenMode = ScreenMode.Add;
-                pineLoginDL.Commit();
+                result = pineLoginDL.Commit();
 
+                // Display the Status - Whether successfully saved or not
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                sb.Append("<script>alert('" + result.Message.ToString() + ".');");
+                sb.Append("</script>");
+                ScriptManager.RegisterStartupScript(this.Page, typeof(string), "MyScript", sb.ToString(), false);
+
+                // If successful get and display the saved Company
+                if (result.Status == TransactionStatus.Success)
+                {
+                    hfLoginID.Value = pineLoginDL.LoginID.ToString();
+                    authenticationCode = pineLoginDL.AuthenticationCode;
+                    mv1.ActiveViewIndex = 2;
+                }
 
             }
 
-
-            mv1.ActiveViewIndex = 2;
         }
 
         protected void btnAuthenticationCode_Click(object sender, EventArgs e)
         {
-            mv1.ActiveViewIndex = 0;
+            pineLoginDL.GetLoginDetails();
+
+
+
+            if (authenticationCode.ToLower() == txtAuthenticationCode.Text.ToLower())
+            {
+                CheckEmailIDAvailable()
+                pineLoginDL = new PineLoginDL();
+                pineLoginDL.IsAuthenticated = true;
+                TransactionResult result;
+                pineLoginDL.ScreenMode = ScreenMode.Add;
+                pineLoginDL.AddEditOption = 1;
+                result = pineLoginDL.Commit();
+
+                // Display the Status - Whether successfully saved or not
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                sb.Append("<script>alert('" + result.Message.ToString() + ".');");
+                sb.Append("</script>");
+                ScriptManager.RegisterStartupScript(this.Page, typeof(string), "MyScript", sb.ToString(), false);
+
+                // If successful get and display the saved Company
+                if (result.Status == TransactionStatus.Success)
+                {
+                    mv1.ActiveViewIndex = 0;
+                }
+            }
+            else
+            {
+                lblShowAuthenticationMsg.Text = "Authentication Code Incorrect. Try Again!";
+            }
         }
 
         /// <summary>
@@ -117,7 +158,7 @@ namespace PineForest
             context = context.Replace("IP\r\n</body>\r\n</html>", "");
             string ip = context;
             var geoContext = GetClientDetailsFromhtml("http://myphpapps.com.cws10.my-hosting-panel.com/index.php");
-                        
+
 
 
             return ip;
@@ -131,8 +172,8 @@ namespace PineForest
         {
             var geoContext = GetClientDetailsFromhtml("http://myphpapps.com.cws10.my-hosting-panel.com/geolocation.php");
 
-            string getLongutitudeLattitude = geoContext;            
-            string getGeoLocation = geoContext;            
+            string getLongutitudeLattitude = geoContext;
+            string getGeoLocation = geoContext;
             return getGeoLocation;
         }
 
