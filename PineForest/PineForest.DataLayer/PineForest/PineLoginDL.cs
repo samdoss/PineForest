@@ -170,11 +170,6 @@ namespace PineForest.DataLayer
                         LoginMobileNo = dataReader.GetString(dataReader.GetOrdinal("LoginMobileNo"));
                         IsAuthenticated = dataReader.GetBoolean(dataReader.GetOrdinal("IsAuthenticated"));
                         AuthenticationCode = dataReader.GetString(dataReader.GetOrdinal("AuthenticationCode"));
-                        AuthenticationDate = dataReader.GetDateTime(dataReader.GetOrdinal("AuthenticationDate"));
-                        LogininIpAddress = dataReader.GetString(dataReader.GetOrdinal("LogininIpAddress"));
-                        GeoLocation = dataReader.GetString(dataReader.GetOrdinal("geolocation"));
-                        RoleName = dataReader.GetString(dataReader.GetOrdinal("RoleName"));
-                        RoleID = dataReader.GetInt32(dataReader.GetOrdinal("RoleID"));
                     }
                 }
                 return _isSuccess;
