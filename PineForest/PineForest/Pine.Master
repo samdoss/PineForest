@@ -30,7 +30,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <div class="container">
                         <div class="logo">
                             <a href="index.html">
-                                <img src="images/logo.png" /></a>
+                                <img src="../images/logo.png" /></a>
                         </div>
                         <span class="menu"></span>
                         <div class="m-clear"></div>
@@ -84,8 +84,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <div class="col-md-7 details">
                         <div class="join">
                             <h4>CALL For Booking</h4>
-                            <img src="images/CALLForBooking.jpg" alt="CALL For Booking" /><br />
-                            <a href="http://www.pineforestmunnar.com/contact.html">READ MORE</a>
+                            <img src="../images/CALLForBooking.jpg" alt="CALL For Booking" /><br />
+                            <a href="http://www.pineforestmunnar.com/contact.aspx">READ MORE</a>
                         </div>
                         <div class="member">
                             &nbsp;

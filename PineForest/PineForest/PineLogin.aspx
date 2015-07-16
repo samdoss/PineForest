@@ -92,6 +92,8 @@
                                     </td>
                                     <td style="text-align: left; vertical-align: top;">
                                         <asp:Button ID="btnCreate" Text="Create Account" runat="server" ValidationGroup="ValidateEmailIDorMobileNo" CausesValidation="true" OnClick="btnCreate_Click" />
+                                    &nbsp; &nbsp; &nbsp;
+                                        <asp:Button ID="btnBacktoLogin" Visible="false" Text="New User" runat="server" OnClick="btnBacktoLogin_Click" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -134,7 +136,7 @@
                                     <td>&nbsp;
                                     </td>
                                     <td style="text-align: left; vertical-align: top;">
-                                        <asp:Button ID="btnAuthenticationCode" Text="Authentication Code" runat="server" OnClick="btnAuthenticationCode_Click" />
+                                        <asp:Button ID="btnAuthenticationCode" CausesValidation="true" ValidationGroup="ValidateAuthenticationCode" Text="Authentication Code" runat="server" OnClick="btnAuthenticationCode_Click" />
                                     </td>
                                 </tr>
                                 <tr>

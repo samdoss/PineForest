@@ -118,7 +118,7 @@ namespace PineForest.DataLayer
             {
                 bool _isSuccess = false;
                 Database db = DatabaseFactory.CreateDatabase(_myConnection.DatabaseName);
-                string sqlCommand = "spGetLoginDetails";
+                string sqlCommand = "spGetLogin";
                 DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
                 db.AddInParameter(dbCommand, "@LoginEmailIDorMobileNo", DbType.String, LoginEmailIDorMobileNo);                
                 using (SqlDataReader dataReader = (SqlDataReader)db.ExecuteReader(dbCommand))

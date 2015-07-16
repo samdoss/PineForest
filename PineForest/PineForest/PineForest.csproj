@@ -114,7 +114,9 @@
     <Content Include="bannerimage\image147.jpg" />
     <Content Include="bannerimage\pineforestbanner2.png" />
     <Content Include="Booking.aspx" />
-    <Content Include="Booking\Registration.aspx" />
+    <Content Include="Booking\BookingHistory.aspx" />
+    <Content Include="Booking\Logout.aspx" />
+    <Content Include="Booking\PineBooking.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\JFFormStyle-1.css" />
@@ -388,12 +390,26 @@
     <Compile Include="Booking.aspx.designer.cs">
       <DependentUpon>Booking.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Booking\Registration.aspx.cs">
-      <DependentUpon>Registration.aspx</DependentUpon>
+    <Compile Include="Booking\BookingHistory.aspx.cs">
+      <DependentUpon>BookingHistory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Booking\Registration.aspx.designer.cs">
-      <DependentUpon>Registration.aspx</DependentUpon>
+    <Compile Include="Booking\BookingHistory.aspx.designer.cs">
+      <DependentUpon>BookingHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Booking\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\PineBooking.aspx.cs">
+      <DependentUpon>PineBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Booking\PineBooking.aspx.designer.cs">
+      <DependentUpon>PineBooking.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

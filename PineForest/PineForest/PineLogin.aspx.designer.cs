@@ -175,6 +175,15 @@ namespace PineForest {
         protected global::System.Web.UI.WebControls.Button btnCreate;
         
         /// <summary>
+        /// btnBacktoLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBacktoLogin;
+        
+        /// <summary>
         /// lblNewUserMsg control.
         /// </summary>
         /// <remarks>

@@ -1,0 +1,1 @@
+http://hotel.yatra.com/hotels-india/hotel/details.htm?hotelID=TGR-00005555&checkinDate=01/08/2015&checkoutDate=02/08/2015&roomRequests[0].id=1&roomRequests[0].noOfAdults=2&roomRequests[0].noOfChildren=0&ci=TRIVAGO&utm_source=TRIVAGO&utm_medium=cpc&utm_campaign=dom-hotels-metasearch

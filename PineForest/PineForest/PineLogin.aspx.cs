@@ -34,6 +34,7 @@ namespace PineForest
 			txtAuthenticationCode.Text = "";
 			lblNewUserMsg.Text = "";
 			lblShowAuthenticationMsg.Text = "";
+            btnBacktoLogin.Visible = false;
 		}
 
 		protected void btnSubmit_Click(object sender, EventArgs e)
@@ -63,6 +64,7 @@ namespace PineForest
 
 		protected void btnCreate_Click(object sender, EventArgs e)
 		{
+            txtLogin.Text = "";
 			if (txtEmailIDorMobileNo.Text != "")
 			{
 				if (CheckEmailIDAvailable(txtEmailIDorMobileNo.Text))
@@ -72,6 +74,7 @@ namespace PineForest
 						if (pineLoginDL.IsAuthenticated)
 						{
 							lblNewUserMsg.Text = "Already you have a account in PineForestMunnar.com!";
+                            btnBacktoLogin.Visible = true;
 							return;
 						}
 						else
@@ -79,6 +82,7 @@ namespace PineForest
 							lblNewUserMsg.Text = "";
 							lblShowAuthenticationMsg.Text = "";
 							mv1.ActiveViewIndex = 3;
+                            btnBacktoLogin.Visible = false;
 						}
 					}
 				}
@@ -125,16 +129,22 @@ namespace PineForest
 
 		}
 
+        protected void btnBacktoLogin_Click(object sender, EventArgs e)
+        {
+            btnBacktoLogin.Visible = false;
+            mv1.ActiveViewIndex = 1;
+        }
+
 		protected void btnAuthenticationCode_Click(object sender, EventArgs e)
 		{
 
 			pineLoginDL = new PineLoginDL();
-			if (txtEmailIDorMobileNo.Text != null || txtEmailIDorMobileNo.Text != string.Empty)
-				pineLoginDL.GetLoginDetails(txtEmailIDorMobileNo.Text);
+			if (txtEmailIDorMobileNo.Text != null && txtEmailIDorMobileNo.Text != string.Empty)
+                pineLoginDL.GetLoginAuthentication(txtEmailIDorMobileNo.Text);
 			else
-				pineLoginDL.GetLoginDetails(txtLogin.Text);
+                pineLoginDL.GetLoginAuthentication(txtLogin.Text);
 
-			if (pineLoginDL.AuthenticationCode.ToLower() == txtAuthenticationCode.Text.ToLower())
+            if (pineLoginDL.AuthenticationCode != null && pineLoginDL.AuthenticationCode.ToLower() == txtAuthenticationCode.Text.ToLower())
 			{
 				pineLoginDL.IsAuthenticated = true;
 				TransactionResult result;
