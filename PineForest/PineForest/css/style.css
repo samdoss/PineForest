@@ -2602,3 +2602,16 @@ margin-top: 3px;
 height: 89px;
 }
 }
+
+// cellpadding
+th, td { padding: 5px; }
+
+// cellspacing
+table { border-collapse: separate; border-spacing: 5px; } // cellspacing="5"
+table { border-collapse: collapse; border-spacing: 10px; }   // cellspacing="0"
+
+// valign
+th, td { vertical-align: top; }
+
+// align (center)
+table { margin: 0; auto; }

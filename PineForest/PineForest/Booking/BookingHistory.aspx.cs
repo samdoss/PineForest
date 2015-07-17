@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace PineForest.Booking
+namespace PineForest
 {
     public partial class BookingHistory : System.Web.UI.Page
     {
