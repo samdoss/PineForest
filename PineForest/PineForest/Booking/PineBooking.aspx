@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pine.Master" AutoEventWireup="true" CodeBehind="PineBooking.aspx.cs" Inherits="PineForest.PineBooking" %>
+
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHeader" runat="server">
     <title>Pine Forest Munnar | Booking</title>
@@ -25,24 +26,34 @@
 
                 <asp:MultiView ID="mv1" runat="server" ActiveViewIndex="0" EnableViewState="true" ViewStateMode="Enabled" Visible="true">
                     <asp:View ID="view1" runat="server">
-                        <div class="col-md-8 booking-form">
-                            <table border="0" style="border-collapse: separate; border-spacing: 10px;" cellspacing="5" cellpadding="5" >
+                        <div class="col-xs-12 booking-form">
+                            <table border="0" style="border: medium; height: 30px; border-collapse: separate; border-spacing: 10px;">
+                                <tr>
+                                    <td colspan="7">
+                                        <asp:Label ID="lblMsgValidation" runat="server" ForeColor="red" Text=""></asp:Label>
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td>
                                         <h5>Check-In</h5>
                                     </td>
                                     <td>
-                                        <asp:TextBox ID="txtCheckInDate" runat="server" MaxLength="10" Width="140px" CssClass="textarea"
-                                            TabIndex="57" />
-                                        <cc1:calendarextender id="ceCheckInDate" runat="server" cssclass="MyCalendar"
-                                            targetcontrolid="txtCheckInDate" onclientdateselectionchanged="function(sender, e) {sender.hide();}">
-                                                </cc1:calendarextender>
+                                        <asp:TextBox ID="txtCheckInDate" Width="110px" CssClass="textarea" autocomplete="off" MaxLength="12"
+                                            runat="server" TabIndex="11"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="rfvCheckInDate" runat="server" ValidationGroup="ValidateRoomBooking"
-                                            ControlToValidate="txtCheckInDate" ErrorMessage="Please Enter the CheckIn Date" Display="none"
+                                            ControlToValidate="txtCheckInDate" Display="none" ErrorMessage="Please Enter the Check-In Date"
                                             SetFocusOnError="True">
                                         </asp:RequiredFieldValidator>
-                                        <cc1:maskededitextender id="meeCheckInDate" runat="server" targetcontrolid="txtCheckInDate"
-                                            mask="99/99/9999" messagevalidatortip="true" culturename="en-US" onfocuscssclass="MaskedEditFocus"
+                                        <asp:Panel ID="pnlCheckInDate" runat="server" CssClass="popupCalendarControl">
+                                            <center>
+                                        <cc1:CalendarExtender ID="ceCheckInDate" CssClass="MyCalendar" OnClientDateSelectionChanged="function(sender, e) {sender.hide();}"
+                                            runat="server" TargetControlID="txtCheckInDate" />
+                                    </center>
+                                        </asp:Panel>
+                                        <cc1:popupcontrolextender id="pceCheckInDate" runat="server" targetcontrolid="txtCheckInDate" popupcontrolid="pnlCheckInDate"
+                                            position="Bottom" />
+                                        <cc1:maskededitextender id="meeCheckInDate" runat="server" targetcontrolid="txtCheckInDate" mask="99/99/9999"
+                                            messagevalidatortip="true" culturename="en-US" onfocuscssclass="MaskedEditFocus"
                                             oninvalidcssclass="MaskedEditError" masktype="Date" displaymoney="Left" acceptnegative="Left"
                                             errortooltipenabled="True" />
                                     </td>
@@ -50,30 +61,259 @@
                                         <h5>Check-Out</h5>
                                     </td>
                                     <td>
-                                        <asp:TextBox ID="txtCheckout" runat="server" MaxLength="10" Width="140px" CssClass="textarea"
-                                            TabIndex="57" />
-                                        <cc1:calendarextender id="ceCheckout" runat="server" cssclass="MyCalendar"
-                                            targetcontrolid="txtCheckout" onclientdateselectionchanged="function(sender, e) {sender.hide();}">
-                                                </cc1:calendarextender>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="ValidateRoomBooking"
-                                            ControlToValidate="txtCheckout" ErrorMessage="Please Enter the Check Out Date" Display="none"
+                                        <asp:TextBox ID="txtCheckOutDate" Width="110px" CssClass="textarea" autocomplete="off" MaxLength="12"
+                                            runat="server" TabIndex="11"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="rfvCheckOutDate" runat="server" ValidationGroup="ValidateRoomBooking"
+                                            ControlToValidate="txtCheckOutDate" Display="none" ErrorMessage="Please Enter the Check-Out Date"
                                             SetFocusOnError="True">
                                         </asp:RequiredFieldValidator>
-                                        <cc1:maskededitextender id="meeCheckout" runat="server" targetcontrolid="txtCheckout"
-                                            mask="99/99/9999" messagevalidatortip="true" culturename="en-US" onfocuscssclass="MaskedEditFocus"
+                                        <asp:Panel ID="pnlCheckOutDate" runat="server" CssClass="popupCalendarControl">
+                                            <center>
+                                        <cc1:CalendarExtender ID="ceCheckOutDate" CssClass="MyCalendar" OnClientDateSelectionChanged="function(sender, e) {sender.hide();}"
+                                            runat="server" TargetControlID="txtCheckOutDate" />
+                                    </center>
+                                        </asp:Panel>
+                                        <cc1:popupcontrolextender id="pceCheckOutDate" runat="server" targetcontrolid="txtCheckOutDate" popupcontrolid="pnlCheckOutDate"
+                                            position="Bottom" />
+                                        <cc1:maskededitextender id="meeCheckOutDate" runat="server" targetcontrolid="txtCheckOutDate" mask="99/99/9999"
+                                            messagevalidatortip="true" culturename="en-US" onfocuscssclass="MaskedEditFocus"
                                             oninvalidcssclass="MaskedEditError" masktype="Date" displaymoney="Left" acceptnegative="Left"
                                             errortooltipenabled="True" />
-
                                     </td>
                                     <td>
                                         <h5>Room Type</h5>
                                     </td>
-                                    <td></td>
-                                    <td></td>
+                                    <td style="vertical-align: middle;">
+                                        <asp:DropDownList ID="ddlRoomType" AppendDataBoundItems="True" Width="300px" CssClass="Dropdownlist"
+                                            runat="server" TabIndex="3">
+                                            <asp:ListItem Value="">-- Select One --</asp:ListItem>
+                                        </asp:DropDownList>
+                                        <asp:RequiredFieldValidator ID="rfvRoomType" runat="server" ValidationGroup="ValidateRoomBooking"
+                                            ControlToValidate="ddlRoomType" Display="none" ErrorMessage="Please Select Room Type"
+                                            SetFocusOnError="True">                                          
+                                        </asp:RequiredFieldValidator>
+                                        <cc1:validatorcalloutextender id="vceRoomType" runat="server" targetcontrolid="rfvRoomType"></cc1:validatorcalloutextender>
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        <asp:Button ID="btnSubmit" Text="Search" TabIndex="4" runat="server" ValidationGroup="ValidateRoomBooking" CausesValidation="true" OnClick="btnSubmit_Click" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <table id="tblAvailableRooms" runat="server" border="0" style="border: medium; height: 30px; border-collapse: separate; border-spacing: 10px;">
+                                <tr>
+                                    <td>
+                                        <asp:Image ID="imgRoomType" runat="server" Height="300" Width="300" ImageUrl="~/images/Economy.jpg" />
+                                    </td>
+                                    <td style="vertical-align: top;">
+                                        <h5>Available Rooms :
+                                        <asp:Label ID="lblAvailableRooms" runat="server" Text=""></asp:Label></h5>
+                                        <br />
+                                        <br />
+                                        <h5>Price Per Day Rs. :
+                                        <asp:Label ID="lblPerRoomPrice" runat="server" Text=""></asp:Label></h5>
+                                        <br />
+                                        <br />
+                                        <h5>No of Rooms :</h5>
+                                        <asp:DropDownList ID="ddlRoomsCount" AppendDataBoundItems="True" Width="300px" CssClass="Dropdownlist"
+                                            runat="server" TabIndex="3">
+                                            <asp:ListItem Value="">-- Select One --</asp:ListItem>
+                                        </asp:DropDownList>
+                                        <asp:RequiredFieldValidator ID="rfvRoomsCount" runat="server" ValidationGroup="ValidateRoomBooking2"
+                                            ControlToValidate="ddlRoomsCount" Display="none" ErrorMessage="Please Select Rooms Count"
+                                            SetFocusOnError="True">                                          
+                                        </asp:RequiredFieldValidator>
+                                        <cc1:validatorcalloutextender id="vceRoomCount" runat="server" targetcontrolid="rfvRoomsCount"></cc1:validatorcalloutextender>
+                                        <br />
+                                        <br />
+                                        <asp:Button ID="btnContinueBooking" Text="Continue ..." TabIndex="4" runat="server" ValidationGroup="ValidateRoomBooking2" CausesValidation="true" OnClick="btnContinueBooking_Click" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="text-align: right;">&nbsp;</td>
                                 </tr>
                             </table>
                             <br />
-                            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                        </div>
+                    </asp:View>
+                    <asp:View ID="view2" runat="server">
+                        <div class="col-xs-12 booking-form">
+                            <table border="0" style="border: medium; height: 30px; border-collapse: separate; border-spacing: 10px;">
+                                <tr>
+                                    <td>&nbsp;
+                                    </td>
+                                    <td>
+                                        <asp:GridView ID="gvBookingRooms" Width="100%" runat="server" CssClass="Grid" AlternatingRowStyle-CssClass="alt" BorderStyle="None"
+                                            OnRowDataBound="gvBookingRooms_RowDataBound">
+                                            <Columns>
+                                                <asp:BoundField DataField="RoomID" />
+                                                <asp:TemplateField>
+                                                    <ItemTemplate>
+                                                        <table style="background-color: white; text-align: left; vertical-align: top; min-width: 700px">
+                                                            <tr style="background-color: palegreen; text-align: left; vertical-align: middle; height: 50px;">
+                                                                <td>
+                                                                    <h4>&nbsp;&nbsp;Room&nbsp;<asp:Label ID="lblRoomCountData" runat="server" Text=""></asp:Label>&nbsp;Guest</h4>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="col-xs-12 booking-form">
+                                                                        <table border="0" style="border: medium; height: 30px; border-collapse: separate; border-spacing: 10px;">
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <asp:Label ID="lblBookingName" runat="server" Text="Booking Name"></asp:Label>
+                                                                                </td>
+                                                                                <td colspan="3">
+                                                                                    <asp:TextBox ID="txtBookingName" TabIndex="1" runat="server"></asp:TextBox>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <asp:Label ID="lblCheckInTime" runat="server" Text="Check In Time"></asp:Label>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <asp:TextBox ID="txtCheckInTime" TabIndex="2" runat="server"></asp:TextBox>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <asp:Label ID="lblCheckoutTime" runat="server" Text="Check Out Time"></asp:Label>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <asp:TextBox ID="txtCheckOutTime" TabIndex="3" runat="server"></asp:TextBox>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <asp:Label ID="lblNoofAdults" runat="server" Text="No of Adults"></asp:Label>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <asp:DropDownList ID="ddlNoofAdults" AppendDataBoundItems="True" Width="70px" CssClass="Dropdownlist"
+                                                                                        runat="server" TabIndex="4">
+                                                                                        <asp:ListItem Value="1">1</asp:ListItem>
+                                                                                        <asp:ListItem Value="2">2</asp:ListItem>
+                                                                                        <asp:ListItem Value="3">3</asp:ListItem>
+                                                                                    </asp:DropDownList>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <asp:Label ID="lblNoofChildrens" runat="server" Text="No of Childrens"></asp:Label>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <asp:DropDownList ID="ddlNoofChildrens" AppendDataBoundItems="True" Width="70" CssClass="Dropdownlist"
+                                                                                        runat="server" TabIndex="5">
+                                                                                        <asp:ListItem Value="1">1</asp:ListItem>
+                                                                                        <asp:ListItem Value="2">2</asp:ListItem>
+                                                                                    </asp:DropDownList>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <asp:Label ID="lblProofVerification" runat="server" Text="ID Proof"></asp:Label>
+                                                                                </td>
+                                                                                <td colspan="3">
+                                                                                    <asp:TextBox ID="txtProofVerification" TabIndex="6" runat="server"></asp:TextBox>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <asp:Label ID="lblEmailID" runat="server" Text="Email ID"></asp:Label>
+                                                                                </td>
+                                                                                <td colspan="3">
+                                                                                    <asp:TextBox ID="txtEmailID" TabIndex="6" runat="server"></asp:TextBox>
+                                                                                    <cc1:filteredtextboxextender id="ftbetxtEmailID" runat="server" targetcontrolid="txtEmailID"
+                                                                                        filtertype="Custom" validchars="1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_.@"
+                                                                                        enabled="True" />
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <asp:Label ID="lblPhoneNumber" runat="server" Text="Phone Number"></asp:Label>
+                                                                                </td>
+                                                                                <td colspan="3">
+                                                                                    <asp:TextBox ID="txtPhoneNumber" MaxLength="10" TabIndex="6" runat="server"></asp:TextBox>
+                                                                                    <cc1:filteredtextboxextender id="ftbetxtPhoneNumber" runat="server" targetcontrolid="txtPhoneNumber"
+                                                                                        filtertype="Custom" validchars="1234567890"
+                                                                                        enabled="True" />
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                            </Columns>
+                                        </asp:GridView>
+                                    </td>
+                                    <td style="vertical-align: top; margin-top: 10px;">
+                                        <table border="0" style="min-width: 300px; margin-top: 10px;">
+                                            <tr style="background-color: hotpink; text-align: left; vertical-align: middle; height: 50px;">
+                                                <td>
+                                                    <h4><b>
+                                                        <center>Booking Summary</center>
+                                                    </b></h4>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <br />
+                                        <table border="0" style="min-width: 300px;">
+                                            <tr style="background-color: hotpink; text-align: left; vertical-align: middle; height: 50px;">
+                                                <td colspan="2">
+                                                    <h4><b>Fare Details</b></h4>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5>&nbsp;&nbsp;Per room per night &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                                                </td>
+                                                <td>
+                                                    <img alt="Indian Rupee symbol.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Indian_Rupee_symbol.svg/10px-Indian_Rupee_symbol.svg.png" width="10" height="15" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Indian_Rupee_symbol.svg/15px-Indian_Rupee_symbol.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Indian_Rupee_symbol.svg/20px-Indian_Rupee_symbol.svg.png 2x" data-file-width="512" data-file-height="754" />
+                                                    <asp:Label ID="lblPerRoomPerNightAmount" runat="server" Text="0"></asp:Label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5>&nbsp;&nbsp;<asp:Label ID="lblRoomsandNights" runat="server" Text="1 Room x 1 Night"></asp:Label>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                                                </td>
+                                                <td>
+                                                    <img alt="Indian Rupee symbol.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Indian_Rupee_symbol.svg/10px-Indian_Rupee_symbol.svg.png" width="10" height="15" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Indian_Rupee_symbol.svg/15px-Indian_Rupee_symbol.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Indian_Rupee_symbol.svg/20px-Indian_Rupee_symbol.svg.png 2x" data-file-width="512" data-file-height="754" />
+                                                    <asp:Label ID="lblRoomsandNightsAmount" runat="server" Text="0"></asp:Label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5>&nbsp;&nbsp;
+                                                        <asp:Label ID="lblFeesandTaxes" runat="server" Text="Fees & Taxes(14 %)"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                                                </td>
+                                                <td>
+                                                    <img alt="Indian Rupee symbol.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Indian_Rupee_symbol.svg/10px-Indian_Rupee_symbol.svg.png" width="10" height="15" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Indian_Rupee_symbol.svg/15px-Indian_Rupee_symbol.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Indian_Rupee_symbol.svg/20px-Indian_Rupee_symbol.svg.png 2x" data-file-width="512" data-file-height="754" />
+                                                    <asp:Label ID="lblFeesandTaxesAmount" runat="server" Text="0"></asp:Label>
+                                                </td>
+                                            </tr>
+                                            <tr style="background-color: silver; text-align: right; vertical-align: middle; height: 60px;">
+                                                <td colspan="2">
+                                                    <h4><b>You Pay &nbsp;&nbsp;
+                                                        <img alt="Indian Rupee symbol.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Indian_Rupee_symbol.svg/10px-Indian_Rupee_symbol.svg.png" width="10" height="15" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Indian_Rupee_symbol.svg/15px-Indian_Rupee_symbol.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Indian_Rupee_symbol.svg/20px-Indian_Rupee_symbol.svg.png 2x" data-file-width="512" data-file-height="754" /></b>
+                                                        <asp:Label ID="lblTotalAmountUPay" runat="server" Text="0"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    </h4>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </asp:View>
+                    <asp:View ID="view3" runat="server">
+                        <div class="col-xs-12 booking-form">
+                            <h4>Thank you for booking in PineForestMunnar.com. You will receive a mail confirmation.</h4>
                         </div>
                     </asp:View>
                 </asp:MultiView>

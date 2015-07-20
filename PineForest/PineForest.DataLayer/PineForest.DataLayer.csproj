@@ -66,6 +66,7 @@
     <Compile Include="Modules\EnquiryReviewChecklistDL.cs" />
     <Compile Include="Modules\ProductDL.cs" />
     <Compile Include="Modules\StockDL.cs" />
+    <Compile Include="PineForest\PineBookingDL.cs" />
     <Compile Include="PineForest\PineLoginDL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Quotes\InspirationQuoteDL.cs" />

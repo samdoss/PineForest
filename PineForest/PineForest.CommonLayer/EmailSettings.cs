@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PineForest.CommonLayer
 {
-  public class OrderSettings
+  public class EmailSettings
   {
     public static Boolean SendMail {
       get
