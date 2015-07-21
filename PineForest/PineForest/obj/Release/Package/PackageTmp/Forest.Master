@@ -21,7 +21,7 @@
                     <div class="container">
                         <div class="logo">
                             <a href="index.html">
-                                <img src="images/logo.png" /></a>
+                                <img src="../images/logo.png" /></a>
                         </div>
                         <span class="menu"></span>
                         <div class="m-clear"></div>

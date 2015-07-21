@@ -63,3 +63,12 @@ F:\currentproject\PineForest\PineForest\PineForest\bin\Microsoft.Web.Infrastruct
 F:\currentproject\PineForest\PineForest\PineForest\bin\Microsoft.Web.Infrastructure.xml
 F:\currentproject\PineForest\PineForest\PineForest\obj\Release\PineForest.dll
 F:\currentproject\PineForest\PineForest\PineForest\obj\Release\PineForest.pdb
+D:\CurrectProject\WebPineForest\pineforest\PineForest\PineForest\bin\AjaxControlToolkit.dll
+D:\CurrectProject\WebPineForest\pineforest\PineForest\PineForest\bin\PineForest.CommonLayer.dll
+D:\CurrectProject\WebPineForest\pineforest\PineForest\PineForest\bin\PineForest.DataLayer.dll
+D:\CurrectProject\WebPineForest\pineforest\PineForest\PineForest\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\CurrectProject\WebPineForest\pineforest\PineForest\PineForest\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\CurrectProject\WebPineForest\pineforest\PineForest\PineForest\bin\Microsoft.Practices.ObjectBuilder.dll
+D:\CurrectProject\WebPineForest\pineforest\PineForest\PineForest\bin\PineForest.CommonLayer.pdb
+D:\CurrectProject\WebPineForest\pineforest\PineForest\PineForest\bin\PineForest.DataLayer.pdb
+D:\CurrectProject\WebPineForest\pineforest\PineForest\PineForest\obj\Release\PineForest.csprojResolveAssemblyReference.cache

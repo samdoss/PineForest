@@ -18,8 +18,7 @@ namespace PineForest
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            var result = Request.Form["datepicker"];
-            HtmlControl ctrl = (HtmlControl)this.FindControl("datepicker");
+           Response.Redirect("~/PineLogin.aspx");
         }
     }
 }

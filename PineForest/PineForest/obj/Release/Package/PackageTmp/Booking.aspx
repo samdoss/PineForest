@@ -16,138 +16,55 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cphBanner" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cpContent" runat="server">
-
+    <!---strat-date-piker---->
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <script src="js/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#cpContent_datepicker,#cpContent_datepicker1").datepicker();
+        });
+    </script>
+    <!---/End-date-piker---->
+    <link type="text/css" rel="stylesheet" href="css/JFGrid.css" />
+    <link type="text/css" rel="stylesheet" href="css/JFFormStyle-1.css" />
+    <script type="text/javascript" src="js/JFCore.js"></script>
+    <script type="text/javascript" src="js/JFForms.js"></script>
+    <!-- Set here the key for your domain in order to hide the watermark on the web server -->
+    <script type="text/javascript">
+        (function () {
+            JC.init({
+                domainKey: ''
+            });
+        })();
+    </script>
     <div class="contact-bg2">
         <div class="container">
             <div class="booking">
                 <h3>Booking</h3>
                 <div class="col-md-8 booking-form">
-                    <form>
-                        <h5>NAME</h5>
-                        <input type="text" value="">
-                        <h5>E-MAIL</h5>
-                        <input type="text" value="">
-                        <h5>PHONE</h5>
-                        <input type="text" value="">
-                        <h5>TIME</h5>
-                        <input type="text" value="" class="time">
-                        <h5>CHECK IN</h5>
-                        <select class="arrival">
-                            <option>01</option>
-                            <option>02</option>
-                            <option>03</option>
-                            <option>04</option>
-                            <option>05</option>
-                            <option>06</option>
-                            <option>08</option>
-                            <option>09</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
-                            <option>13</option>
-                            <option>14</option>
-                            <option>15</option>
-                            <option>16</option>
-                            <option>17</option>
-                            <option>18</option>
-                            <option>19</option>
-                            <option>20</option>
-                            <option>21</option>
-                            <option>22</option>
-                            <option>23</option>
-                            <option>24</option>
-                            <option>25</option>
-                            <option>26</option>
-                            <option>27</option>
-                            <option>28</option>
-                            <option>29</option>
-                            <option>30</option>
-                            <option>31</option>
-                        </select>
-                        <select class="arrival">
-                            <option>Jan</option>
-                            <option>Feb</option>
-                            <option>Mar</option>
-                            <option>Apr</option>
-                            <option>May</option>
-                            <option>June</option>
-                            <option>July</option>
-                            <option>Aug</option>
-                            <option>Sep</option>
-                            <option>Oct</option>
-                            <option>Nov</option>
-                            <option>Dec</option>
-                        </select>
-                        <select class="arrival">
-                            <option>2012</option>
-                            <option>2013</option>
-                            <option>2014</option>
-                            <option>2015</option>
-                            <option>2016</option>
-                            <option>2017</option>
-                        </select>
-                        <h5>CHECK OUT</h5>
-                        <select class="arrival">
-                            <option>01</option>
-                            <option>02</option>
-                            <option>03</option>
-                            <option>04</option>
-                            <option>05</option>
-                            <option>06</option>
-                            <option>08</option>
-                            <option>09</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
-                            <option>13</option>
-                            <option>14</option>
-                            <option>15</option>
-                            <option>16</option>
-                            <option>17</option>
-                            <option>18</option>
-                            <option>19</option>
-                            <option>20</option>
-                            <option>21</option>
-                            <option>22</option>
-                            <option>23</option>
-                            <option>24</option>
-                            <option>25</option>
-                            <option>26</option>
-                            <option>27</option>
-                            <option>28</option>
-                            <option>29</option>
-                            <option>30</option>
-                            <option>31</option>
-                        </select>
-                        <select class="arrival">
-                            <option>Jan</option>
-                            <option>Feb</option>
-                            <option>Mar</option>
-                            <option>Apr</option>
-                            <option>May</option>
-                            <option>June</option>
-                            <option>July</option>
-                            <option>Aug</option>
-                            <option>Sep</option>
-                            <option>Oct</option>
-                            <option>Nov</option>
-                            <option>Dec</option>
-                        </select>
-                        <select class="arrival">
-                            <option>2012</option>
-                            <option>2013</option>
-                            <option>2014</option>
-                            <option>2015</option>
-                            <option>2016</option>
-                            <option>2017</option>
-                        </select>
-                        <h5 class="mem">MEMBERS</h5>
-                        <input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">
-                        <h5>REQUIRED</h5>
-                        <textarea value=""></textarea>
-                        <input type="submit" value="Submit">
-                        <input type="reset" value="Reset">
-                    </form>
+                    <h5>NAME</h5>
+                    <asp:TextBox ID="txtCustomerName" runat="server"></asp:TextBox>
+                    <h5>E-MAIL</h5>
+                    <asp:TextBox ID="txtEmailID" runat="server"></asp:TextBox>
+                    <h5>PHONE</h5>
+                    <asp:TextBox ID="txtPhoneNumber" runat="server"></asp:TextBox>
+                    <h5>TIME</h5>
+                    <asp:TextBox ID="txtTime" class="time" CssClass="time" runat="server"></asp:TextBox>
+                    <h5>CHECK IN</h5>
+                    <div class="book_date">
+                        <input class="date" runat="server" id="datepicker" type="text" value="2/08/2013" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '2/08/2013';}" />
+                    </div>
+                    <h5>CHECK OUT</h5>
+                    <div class="book_date">
+                        <input class="date" runat="server" id="datepicker1" type="text" value="12/08/2015" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '12/08/2015';}" />
+                    </div>
+                    <h5 class="mem">MEMBERS</h5>
+                    <input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">
+                    <h5>REQUIRED</h5>
+                    <textarea value=""></textarea>
+                    <asp:Button ID="btnSubmit" Text="Submit" runat="server" />
+                    &nbsp;&nbsp;&nbsp;
+                                <asp:Button ID="btnReset" Text="Reset" runat="server" />
                 </div>
                 <div class="col-md-4 booking-news">
                     <%--<h4>Latest News</h4>			
