@@ -23,6 +23,9 @@ namespace PineForest
         {
             if (!IsPostBack)
             {
+                Session["LoginID"] = "";
+                Session["EmailID"] = "";
+                Session["MobileNumber"] = "";
                 hfIpAddress.Value = GetUserIPAddress();
                 hfGeoLocation.Value = GetGeoLocation();
             }
@@ -38,7 +41,7 @@ namespace PineForest
             lblShowAuthenticationMsg.Text = "";
             btnBacktoLogin.Visible = false;
         }
-
+             
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             if (txtLogin.Text != "")
@@ -47,6 +50,10 @@ namespace PineForest
                 {
                     if (pineLoginDL.IsAuthenticated)
                     {
+                        Session["LoginID"] = pineLoginDL.LoginID;
+                        Session["EmailID"] = pineLoginDL.LoginMailID;
+                        Session["MobileNumber"] = pineLoginDL.LoginMobileNo;
+
                         Response.Redirect("~/Booking/PineBooking.aspx");
                     }
                     else
@@ -61,18 +68,19 @@ namespace PineForest
             }
         }
 
-        private void SendMailConfirmation(string customerMailID, string authenticationCode)
+        private void SendmailtoAdmin(string customerMailID, string authenticationCode)
         {
-            MailMessage _msg = new MailMessage();
+            SmtpClient smtpClient = new SmtpClient();
+            MailMessage sm = new MailMessage();
+            smtpClient.Credentials = new System.Net.NetworkCredential("info@pineforestmunnar.com", "Mocha$55");
+            smtpClient.Host = System.Configuration.ConfigurationManager.AppSettings["SmtpServer"].ToString();
+            smtpClient.Port = 25;
+            sm.To.Add(customerMailID);
+            sm.Bcc.Add("info.pineforestmunnar@gmail.com");
+            sm.IsBodyHtml = true;
+            sm.From = new MailAddress("info@pineforestmunnar.com");
+            sm.Subject = "Welcome to PineForestMunnar.com";
             StringBuilder sbMail = new StringBuilder();
-            _msg.From = new MailAddress("info@pineforestmunnar.com");
-
-            // To Address
-            _msg.To.Add(new MailAddress(customerMailID));
-            // Subject
-            _msg.Subject = "Welcome to PineForestMunnar.com";
-
-            // Body
             sbMail.Append("Dear Customer,");
             sbMail.Append(Environment.NewLine);
             sbMail.Append(Environment.NewLine);
@@ -84,7 +92,7 @@ namespace PineForest
             sbMail.Append(Environment.NewLine);
             sbMail.Append(Environment.NewLine);
 
-            sbMail.Append("Kindly login with your E-Mail id for");
+            sbMail.Append("Kindly login with your E-Mail id for ");
             sbMail.Append("information security reasons.");
             sbMail.Append(Environment.NewLine);
             sbMail.Append(Environment.NewLine);
@@ -109,34 +117,53 @@ namespace PineForest
             sbMail.Append(Environment.NewLine);
             sbMail.Append(Environment.NewLine);
             sbMail.Append("Administrator");
+            sbMail.Append(Environment.NewLine);
             sbMail.Append("PineForestMunnar.com");
             sbMail.Append(Environment.NewLine);
             sbMail.Append(Environment.NewLine);
 
-            _msg.Body = sbMail.ToString();
+            //sm.Body += "<p><font face='Times New Roman' font-size='12'>Josh,</font></p>";
+            //sm.Body += "<p><font face='Times New Roman' font-size='12'>" + lblEmployeeName.Text + " needs leave on the following days.";
 
-            SendMessage(_msg);
-        }
+            //sm.Body += "<p>Kindly find below " + genderStr + " leave application details. Convey this to the Client and send me the response." + "<br /></font></p>";
+            //sm.Body += "<p><font face='Times New Roman' font-size='12'><table border=1 cellspacing=2 cellpadding=2><tr><td>S.No</td><td>Client</td><td>Employee Name</td>";
+            //sm.Body += "<td>Date of Application</td><td>Leave Wanted From</td><td>Leave Wanted To</td><td>Total No. of Days</td>";
+            //sm.Body += "<td>Reason</td><tr>";
 
-        private void SendMessage(MailMessage _msg)
-        {
-            if (EmailSettings.SendMail)
+            //if (hdfRole.Value.ToString() == "Administrator" || hdfRole.Value.ToString() == "HR")
+            //{
+            //    sm.Body += "<tr><td>1</td><td>&nbsp;</td><td>" + lblEmployeeName.Text + "</td>";
+            //}
+            //else
+            //{
+            //    if (Convert.ToInt32(hdfCompanyID.Value) == Convert.ToInt32(Company.ECGroupMT))
+            //    {
+            //        sm.Body += "<tr><td>1</td><td>&nbsp;</td><td>" + lblEmployeeName.Text + "</td>";
+            //    }
+            //    else
+            //    {
+            //        sm.Body += "<tr><td>1</td><td>" + ddlClient.SelectedItem.Text + "</td><td>" + lblEmployeeName.Text + "</td>";
+            //    }
+            //}
+
+
+            //sm.Body += "<td>" + _currentDate.Date.ToShortDateString() + "</td><td>" + txtFromDate.Text + "</td><td>" + txtToDate.Text + "</td><td>" + hdfTotalDaysLeave.Value.ToString() + "</td>";
+            //sm.Body += "<td>" + txtReasonforLeave.Text + "</td><tr></table><br /><br />";
+            //sm.Body += "<p><font face='Times New Roman' font-size='12'>Thank you, <br />Alice.";
+            sm.IsBodyHtml = false;
+            sm.Body = sbMail.ToString();
+
+            sm.Priority = MailPriority.Normal;
+            try
             {
-                _msg.Priority = MailPriority.Normal;
-                SmtpClient client = new SmtpClient();
-                client.Host = System.Configuration.ConfigurationManager.AppSettings["SmtpServer"].ToString();
-                client.Port = 25;
-                client.Credentials = new System.Net.NetworkCredential("info@pineforestmunnar.com", "Mocha$55", "pineforestmunnar.com");
-                //client.Host = "mail.pineforestmunnar.com";
-                //client.Port = 25;
-                client.EnableSsl = false;
-                client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                client.UseDefaultCredentials = false;
-                client.Send(_msg);
-
-                client = null;
-                _msg = null;
+                smtpClient.Send(sm);
             }
+            catch (Exception ex)
+            {
+                String err_str = "Send Email Failed." + ex.Message;
+            }
+            smtpClient = null;
+            sm = null;
         }
 
         private bool CheckEmailIDAvailable(string emailIdorMobileNo)
@@ -208,7 +235,8 @@ namespace PineForest
                     authenticationCode = pineLoginDL.AuthenticationCode;
                     if (txtEmailIDorMobileNo.Text.Contains("@"))
                     {
-                        SendMailConfirmation(pineLoginDL.LoginMailID, authenticationCode);
+                        SendmailtoAdmin(pineLoginDL.LoginMailID, authenticationCode);
+                        //SendMailConfirmation(pineLoginDL.LoginMailID, authenticationCode);
                         //pineLoginDL.LoginMailID = txtEmailIDorMobileNo.Text;
                         //pineLoginDL.LoginMobileNo = string.Empty;
                     }
@@ -227,7 +255,7 @@ namespace PineForest
         protected void btnBacktoLogin_Click(object sender, EventArgs e)
         {
             btnBacktoLogin.Visible = false;
-            mv1.ActiveViewIndex = 1;
+            mv1.ActiveViewIndex = 0;
         }
 
         protected void btnAuthenticationCode_Click(object sender, EventArgs e)

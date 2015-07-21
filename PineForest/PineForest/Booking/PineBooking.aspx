@@ -18,12 +18,13 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cphBanner" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cpContent" runat="server">
-
+    <asp:HiddenField ID="hfLoginID" runat="server" Value="" />
+    <asp:HiddenField ID="hfEmailID" runat="server" Value="" />
+    <asp:HiddenField ID="hfMobileNo" runat="server" Value="" />
     <div class="contact-bg2">
         <div class="container">
             <div class="booking">
                 <h3>Booking</h3>
-
                 <asp:MultiView ID="mv1" runat="server" ActiveViewIndex="0" EnableViewState="true" ViewStateMode="Enabled" Visible="true">
                     <asp:View ID="view1" runat="server">
                         <div class="col-xs-12 booking-form">
@@ -50,12 +51,12 @@
                                             runat="server" TargetControlID="txtCheckInDate" />
                                     </center>
                                         </asp:Panel>
-                                        <cc1:popupcontrolextender id="pceCheckInDate" runat="server" targetcontrolid="txtCheckInDate" popupcontrolid="pnlCheckInDate"
-                                            position="Bottom" />
-                                        <cc1:maskededitextender id="meeCheckInDate" runat="server" targetcontrolid="txtCheckInDate" mask="99/99/9999"
-                                            messagevalidatortip="true" culturename="en-US" onfocuscssclass="MaskedEditFocus"
-                                            oninvalidcssclass="MaskedEditError" masktype="Date" displaymoney="Left" acceptnegative="Left"
-                                            errortooltipenabled="True" />
+                                        <cc1:PopupControlExtender ID="pceCheckInDate" runat="server" TargetControlID="txtCheckInDate" PopupControlID="pnlCheckInDate"
+                                            Position="Bottom" />
+                                        <cc1:MaskedEditExtender ID="meeCheckInDate" runat="server" TargetControlID="txtCheckInDate" Mask="99/99/9999"
+                                            MessageValidatorTip="true" CultureName="en-US" OnFocusCssClass="MaskedEditFocus"
+                                            OnInvalidCssClass="MaskedEditError" MaskType="Date" DisplayMoney="Left" AcceptNegative="Left"
+                                            ErrorTooltipEnabled="True" />
                                     </td>
                                     <td>
                                         <h5>Check-Out</h5>
@@ -73,12 +74,12 @@
                                             runat="server" TargetControlID="txtCheckOutDate" />
                                     </center>
                                         </asp:Panel>
-                                        <cc1:popupcontrolextender id="pceCheckOutDate" runat="server" targetcontrolid="txtCheckOutDate" popupcontrolid="pnlCheckOutDate"
-                                            position="Bottom" />
-                                        <cc1:maskededitextender id="meeCheckOutDate" runat="server" targetcontrolid="txtCheckOutDate" mask="99/99/9999"
-                                            messagevalidatortip="true" culturename="en-US" onfocuscssclass="MaskedEditFocus"
-                                            oninvalidcssclass="MaskedEditError" masktype="Date" displaymoney="Left" acceptnegative="Left"
-                                            errortooltipenabled="True" />
+                                        <cc1:PopupControlExtender ID="pceCheckOutDate" runat="server" TargetControlID="txtCheckOutDate" PopupControlID="pnlCheckOutDate"
+                                            Position="Bottom" />
+                                        <cc1:MaskedEditExtender ID="meeCheckOutDate" runat="server" TargetControlID="txtCheckOutDate" Mask="99/99/9999"
+                                            MessageValidatorTip="true" CultureName="en-US" OnFocusCssClass="MaskedEditFocus"
+                                            OnInvalidCssClass="MaskedEditError" MaskType="Date" DisplayMoney="Left" AcceptNegative="Left"
+                                            ErrorTooltipEnabled="True" />
                                     </td>
                                     <td>
                                         <h5>Room Type</h5>
@@ -92,7 +93,7 @@
                                             ControlToValidate="ddlRoomType" Display="none" ErrorMessage="Please Select Room Type"
                                             SetFocusOnError="True">                                          
                                         </asp:RequiredFieldValidator>
-                                        <cc1:validatorcalloutextender id="vceRoomType" runat="server" targetcontrolid="rfvRoomType"></cc1:validatorcalloutextender>
+                                        <cc1:ValidatorCalloutExtender ID="vceRoomType" runat="server" TargetControlID="rfvRoomType"></cc1:ValidatorCalloutExtender>
                                     </td>
                                     <td style="vertical-align: middle;">
                                         <asp:Button ID="btnSubmit" Text="Search" TabIndex="4" runat="server" ValidationGroup="ValidateRoomBooking" CausesValidation="true" OnClick="btnSubmit_Click" />
@@ -101,19 +102,22 @@
                             </table>
                             <table id="tblAvailableRooms" runat="server" border="0" style="border: medium; height: 30px; border-collapse: separate; border-spacing: 10px;">
                                 <tr>
-                                    <td>
-                                        <asp:Image ID="imgRoomType" runat="server" Height="300" Width="300" ImageUrl="~/images/Economy.jpg" />
+                                    <td style="min-width: 400px;">
+                                        <asp:Image ID="imgRoomType" runat="server" Height="300px" Width="400px" ImageUrl="~/images/Economy.jpg" />
+                                    </td>
+                                    <td style="min-width: 50px;">&nbsp;
                                     </td>
                                     <td style="vertical-align: top;">
-                                        <h5>Available Rooms :
-                                        <asp:Label ID="lblAvailableRooms" runat="server" Text=""></asp:Label></h5>
+                                        <br />
+                                        <h4><b>Available Rooms :</b>
+                                            <asp:Label ID="lblAvailableRooms" runat="server" Text=""></asp:Label></h4>
                                         <br />
                                         <br />
-                                        <h5>Price Per Day Rs. :
-                                        <asp:Label ID="lblPerRoomPrice" runat="server" Text=""></asp:Label></h5>
+                                        <h4><b>Price Per Day Rs. :</b>
+                                            <asp:Label ID="lblPerRoomPrice" runat="server" Text=""></asp:Label></h4>
                                         <br />
                                         <br />
-                                        <h5>No of Rooms :</h5>
+                                        <h4><b>No of Rooms :</b></h4>
                                         <asp:DropDownList ID="ddlRoomsCount" AppendDataBoundItems="True" Width="300px" CssClass="Dropdownlist"
                                             runat="server" TabIndex="3">
                                             <asp:ListItem Value="">-- Select One --</asp:ListItem>
@@ -122,14 +126,14 @@
                                             ControlToValidate="ddlRoomsCount" Display="none" ErrorMessage="Please Select Rooms Count"
                                             SetFocusOnError="True">                                          
                                         </asp:RequiredFieldValidator>
-                                        <cc1:validatorcalloutextender id="vceRoomCount" runat="server" targetcontrolid="rfvRoomsCount"></cc1:validatorcalloutextender>
+                                        <cc1:ValidatorCalloutExtender ID="vceRoomCount" runat="server" TargetControlID="rfvRoomsCount"></cc1:ValidatorCalloutExtender>
                                         <br />
                                         <br />
                                         <asp:Button ID="btnContinueBooking" Text="Continue ..." TabIndex="4" runat="server" ValidationGroup="ValidateRoomBooking2" CausesValidation="true" OnClick="btnContinueBooking_Click" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" style="text-align: right;">&nbsp;</td>
+                                    <td colspan="3" style="text-align: right;">&nbsp;</td>
                                 </tr>
                             </table>
                             <br />
@@ -171,7 +175,8 @@
                                                                                     <asp:Label ID="lblBookingName" runat="server" Text="Booking Name"></asp:Label>
                                                                                 </td>
                                                                                 <td colspan="3">
-                                                                                    <asp:TextBox ID="txtBookingName" TabIndex="1" runat="server"></asp:TextBox>
+                                                                                    <asp:TextBox ID="txtBookingName" Style="background-color: #f5f6b9" TabIndex="1" runat="server"></asp:TextBox>
+                                                                                    <cc1:TextBoxWatermarkExtender ID="tbweBookingName" runat="server" Enabled="true" TargetControlID="txtBookingName" WatermarkText="*"></cc1:TextBoxWatermarkExtender>
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
@@ -206,6 +211,7 @@
                                                                                 <td>
                                                                                     <asp:DropDownList ID="ddlNoofChildrens" AppendDataBoundItems="True" Width="70" CssClass="Dropdownlist"
                                                                                         runat="server" TabIndex="5">
+                                                                                        <asp:ListItem Value="0">0</asp:ListItem>
                                                                                         <asp:ListItem Value="1">1</asp:ListItem>
                                                                                         <asp:ListItem Value="2">2</asp:ListItem>
                                                                                     </asp:DropDownList>
@@ -216,7 +222,8 @@
                                                                                     <asp:Label ID="lblProofVerification" runat="server" Text="ID Proof"></asp:Label>
                                                                                 </td>
                                                                                 <td colspan="3">
-                                                                                    <asp:TextBox ID="txtProofVerification" TabIndex="6" runat="server"></asp:TextBox>
+                                                                                    <asp:TextBox ID="txtProofVerification" Style="background-color: #f5f6b9;" TabIndex="6" runat="server"></asp:TextBox>
+                                                                                    <cc1:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender1" runat="server" Enabled="true" TargetControlID="txtProofVerification" WatermarkText="* Mandatory"></cc1:TextBoxWatermarkExtender>
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
@@ -224,10 +231,11 @@
                                                                                     <asp:Label ID="lblEmailID" runat="server" Text="Email ID"></asp:Label>
                                                                                 </td>
                                                                                 <td colspan="3">
-                                                                                    <asp:TextBox ID="txtEmailID" TabIndex="6" runat="server"></asp:TextBox>
-                                                                                    <cc1:filteredtextboxextender id="ftbetxtEmailID" runat="server" targetcontrolid="txtEmailID"
-                                                                                        filtertype="Custom" validchars="1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_.@"
-                                                                                        enabled="True" />
+                                                                                    <asp:TextBox ID="txtEmailID" Style="background-color: #f5f6b9;" TabIndex="6" runat="server"></asp:TextBox>
+                                                                                    <cc1:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender2" runat="server" Enabled="true" TargetControlID="txtEmailID" WatermarkText="* Mandatory"></cc1:TextBoxWatermarkExtender>
+                                                                                    <cc1:FilteredTextBoxExtender ID="ftbetxtEmailID" runat="server" TargetControlID="txtEmailID"
+                                                                                        FilterType="Custom" ValidChars="1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_.@"
+                                                                                        Enabled="True" />
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
@@ -235,10 +243,11 @@
                                                                                     <asp:Label ID="lblPhoneNumber" runat="server" Text="Phone Number"></asp:Label>
                                                                                 </td>
                                                                                 <td colspan="3">
-                                                                                    <asp:TextBox ID="txtPhoneNumber" MaxLength="10" TabIndex="6" runat="server"></asp:TextBox>
-                                                                                    <cc1:filteredtextboxextender id="ftbetxtPhoneNumber" runat="server" targetcontrolid="txtPhoneNumber"
-                                                                                        filtertype="Custom" validchars="1234567890"
-                                                                                        enabled="True" />
+                                                                                    <asp:TextBox ID="txtPhoneNumber" Style="background-color: #f5f6b9;" MaxLength="10" TabIndex="6" runat="server"></asp:TextBox>
+                                                                                    <cc1:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender3" runat="server" Enabled="true" TargetControlID="txtPhoneNumber" WatermarkText="* Mandatory"></cc1:TextBoxWatermarkExtender>
+                                                                                    <cc1:FilteredTextBoxExtender ID="ftbetxtPhoneNumber" runat="server" TargetControlID="txtPhoneNumber"
+                                                                                        FilterType="Custom" ValidChars="1234567890"
+                                                                                        Enabled="True" />
                                                                                 </td>
                                                                             </tr>
                                                                         </table>

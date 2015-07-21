@@ -13,6 +13,33 @@ namespace PineForest {
     public partial class PineBooking {
         
         /// <summary>
+        /// hfLoginID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfLoginID;
+        
+        /// <summary>
+        /// hfEmailID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfEmailID;
+        
+        /// <summary>
+        /// hfMobileNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfMobileNo;
+        
+        /// <summary>
         /// mv1 control.
         /// </summary>
         /// <remarks>

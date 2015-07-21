@@ -18,7 +18,6 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cphBanner" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cpContent" runat="server">
-
     <div class="contact-bg2">
         <div class="container">
             <asp:MultiView ID="mv1" runat="server" ActiveViewIndex="0" EnableViewState="true" ViewStateMode="Enabled" Visible="true">
@@ -92,8 +91,8 @@
                                     </td>
                                     <td style="text-align: left; vertical-align: top;">
                                         <asp:Button ID="btnCreate" Text="Create Account" runat="server" ValidationGroup="ValidateEmailIDorMobileNo" CausesValidation="true" OnClick="btnCreate_Click" />
-                                    &nbsp; &nbsp; &nbsp;
-                                        <asp:Button ID="btnBacktoLogin" Visible="false" Text="New User" runat="server" OnClick="btnBacktoLogin_Click" />
+                                        &nbsp; &nbsp; &nbsp;      
+                                        <asp:Button ID="btnBacktoLogin" Visible="false" Text="Back to Login" runat="server" OnClick="btnBacktoLogin_Click" />                                  
                                     </td>
                                 </tr>
                                 <tr>
@@ -142,7 +141,7 @@
                                 <tr>
                                     <td colspan="2">
                                         <p style="color: red; font-size: small;">you will receive mail or sms to enter the authentication code.</p>
-                                        <asp:Label ID="lblShowAuthenticationMsg" style="color: red; font-size: small;" runat="server"></asp:Label>
+                                        <asp:Label ID="lblShowAuthenticationMsg" Style="color: red; font-size: small;" runat="server"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
