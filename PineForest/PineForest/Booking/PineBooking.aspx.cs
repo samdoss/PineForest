@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -15,6 +16,13 @@ namespace PineForest
 {
     public partial class PineBooking : System.Web.UI.Page
     {
+
+        string MatchEmailPattern = @"^(([\w-]+\.)+[\w-]+|([a-zA-Z]{1}|[\w-]{2,}))@" + @"((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?
+				                                        [0-9]{1,2}|25[0-5]|2[0-4][0-9])\."
+                                             + @"([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?
+				                                        [0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
+                                             + @"([a-zA-Z0-9]+[\w-]+\.)+[a-zA-Z]{1}[a-zA-Z0-9-]{1,23})$";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -32,7 +40,7 @@ namespace PineForest
         {
             try
             {
-                if(ddlRoomType.SelectedValue == "1")
+                if (ddlRoomType.SelectedValue == "1")
                     imgRoomType.ImageUrl = "~//images//Economy.jpg";
                 if (ddlRoomType.SelectedValue == "2")
                     imgRoomType.ImageUrl = "~//images//Deluxe.jpg";
@@ -49,10 +57,10 @@ namespace PineForest
                     return;
                 }
                 tblAvailableRooms.Visible = true;
-                RoomCount();                
+                RoomCount();
                 return;
             }
-            catch{}
+            catch { }
         }
 
         private int DaysCount()
@@ -264,7 +272,7 @@ namespace PineForest
                 lblRoomsandNights.Text = Convert.ToInt32(ddlRoomsCount.SelectedValue).ToString() + "Rooms x";
             }
 
-            if(Convert.ToInt32(roomNights).ToString() == "1")
+            if (Convert.ToInt32(roomNights).ToString() == "1")
             {
                 lblRoomsandNights.Text = lblRoomsandNights.Text + " " + roomNights + " " + "Night";
             }
@@ -414,5 +422,163 @@ namespace PineForest
             catch { }
         }
 
+        protected void btnSubmitBooking_Click(object sender, EventArgs e)
+        {
+            if (!GridFormValidation())
+            {
+                return;
+            }
+            //int roomCount = Convert.ToInt32(ddlRoomsCount.SelectedValue);
+            int roomNights = DaysCount();
+            int roomNightsandAmountPerday = roomNights * lblPerRoomPrice.Text.cxToInt32();
+            int feesandTax = Convert.ToInt32(100) + Convert.ToInt32(roomNightsandAmountPerday * 14 / 100);
+
+            PineBookingDL bookingDL = new PineBookingDL();
+            PineLoginDL loginDL = new PineLoginDL();
+
+            for (int i = 0; i <= gvBookingRooms.Rows.Count - 1; i++)
+            {
+                string registrationCode = loginDL.GenerateAuthCode().cxToString();
+                registrationCode = "" + "PFM" + registrationCode.ToUpper();
+                registrationCode = registrationCode.Remove(10);
+                registrationCode = registrationCode + DateTime.Now.Day + "" + DateTime.Now.Month + "";
+
+                bookingDL.LoginID = hfLoginID.Value.cxToInt32();
+                bookingDL.RegistrationID = registrationCode;
+                bookingDL.BookingDate = DateTime.Now.Date;
+                bookingDL.BookingFrom = Convert.ToDateTime(txtCheckInDate.Text);
+                bookingDL.BookingTo = Convert.ToDateTime(txtCheckOutDate.Text);
+                bookingDL.AdditionalBed = 0;
+                bookingDL.Remarks = string.Empty;
+                bookingDL.RoomTypeID = ddlRoomType.SelectedValue.cxToInt32();
+
+                TextBox txtBoxValue = (TextBox)gvBookingRooms.Rows[i].FindControl("txtBookingName");
+                bookingDL.BookingName = txtBoxValue.Text;
+                txtBoxValue = (TextBox)gvBookingRooms.Rows[i].FindControl("txtCheckInTime");
+                bookingDL.CheckInTime = txtBoxValue.Text;
+                txtBoxValue = (TextBox)gvBookingRooms.Rows[i].FindControl("txtCheckOutTime");
+                bookingDL.CheckOutTime = txtBoxValue.Text;
+                DropDownList ddlBoxValue = (DropDownList)gvBookingRooms.Rows[i].FindControl("ddlNoofAdults");
+                bookingDL.NoofAdults = ddlBoxValue.SelectedValue.cxToInt32();
+                ddlBoxValue = (DropDownList)gvBookingRooms.Rows[i].FindControl("ddlNoofChildrens");
+                bookingDL.NoofChildrens = ddlBoxValue.SelectedValue.cxToInt32();
+                txtBoxValue = (TextBox)gvBookingRooms.Rows[i].FindControl("txtProofVerification");
+                bookingDL.Proofverification = txtBoxValue.Text;
+                txtBoxValue = (TextBox)gvBookingRooms.Rows[i].FindControl("txtEmailID");
+                bookingDL.EmailID = txtBoxValue.Text;
+                txtBoxValue = (TextBox)gvBookingRooms.Rows[i].FindControl("txtPhoneNumber");
+                bookingDL.PhoneNumber = txtBoxValue.Text;
+
+                bookingDL.RoomNo = i + 1;
+                bookingDL.AmountPerday = lblPerRoomPrice.Text.cxToInt32();
+                bookingDL.Discount = 0;
+                bookingDL.FeesandTax = feesandTax;
+                bookingDL.TotalAmount = roomNightsandAmountPerday + feesandTax;
+                bookingDL.PaidAmount = 0;
+                bookingDL.IpAddress = "";
+                bookingDL.GeoLocation = "";
+                //bookingDL.PaymentDate = ;
+                //bookingDL.PaymentByUsing = "";
+
+
+
+                TransactionResult result;
+                bookingDL.ScreenMode = ScreenMode.Add;
+                result = bookingDL.Commit();
+
+                //// Display the Status - Whether successfully saved or not
+                //System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                //sb.Append("<script>alert('" + result.Message.ToString() + ".');");
+                //sb.Append("</script>");
+                //ScriptManager.RegisterStartupScript(this.Page, typeof(string), "MyScript", sb.ToString(), false);
+
+                // If successful get and display the saved Company
+                if (result.Status == TransactionStatus.Success)
+                {
+                    //bookingDL.BookingID
+                    mv1.ActiveViewIndex = 2;
+                }
+
+            }
+        }
+
+        private bool GridFormValidation()
+        {
+            try
+            {
+                bool rValue = true;
+
+                //System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                //sb.Append("<script>alert('" + "CheckIn Date - Incorrect format (mm/dd/yyyy)" + ".');");
+                //sb.Append("</script>");
+                //ScriptManager.RegisterStartupScript(this.Page, typeof(string), "MyScript", sb.ToString(), false);
+                //lblMsgValidation.Text = "CheckIn Date - Incorrect format (mm/dd/yyyy).";
+                // rValue = false;
+
+                for (int i = 0; i <= gvBookingRooms.Rows.Count - 1; i++)
+                {
+                    string IsEmptyString = string.Empty;
+                    TextBox txtBookingName = (TextBox)gvBookingRooms.Rows[i].FindControl("txtBookingName");
+                    IsEmptyString = txtBookingName.Text;
+
+                    if (IsEmptyString == string.Empty)
+                    {
+                        lblBookingErrorMsg.Text = "Please Enter the Booking Name.";
+                        return false;
+                    }
+
+                    TextBox txtProofVerification = (TextBox)gvBookingRooms.Rows[i].FindControl("txtProofVerification");
+                    IsEmptyString = txtProofVerification.Text;
+
+                    if (IsEmptyString == string.Empty)
+                    {
+                        lblBookingErrorMsg.Text = "Please Enter the ID Proof Verification.";
+                        return false;
+                    }
+
+                    TextBox txtEmailID = (TextBox)gvBookingRooms.Rows[i].FindControl("txtEmailID");
+                    IsEmptyString = txtEmailID.Text;
+
+                    if (IsEmptyString == string.Empty)
+                    {
+                        lblBookingErrorMsg.Text = "Please Enter the valid EmailID.";
+                        return false;
+                    }
+                    else if (!IsEmail(IsEmptyString))
+                    {
+                        lblBookingErrorMsg.Text = "EmailID is not valid.";
+                        return false;
+                    }
+
+                    TextBox txtPhoneNumber = (TextBox)gvBookingRooms.Rows[i].FindControl("txtPhoneNumber");
+                    IsEmptyString = txtPhoneNumber.Text;
+
+                    if (IsEmptyString == string.Empty)
+                    {
+                        lblBookingErrorMsg.Text = "Please Enter the valid Phone Number.";
+                        return false;
+                    }
+                }
+                if (rValue)
+                {
+                    lblBookingErrorMsg.Text = "";
+                }
+
+                return rValue;
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.LogErrorMessageToDB("PineBooking.aspx", "", "GridFormValidation", ex.Message, new PineConnection());
+                return false;
+            }
+        }
+
+        public bool IsEmail(string email)
+        {
+            if (email != null)
+                return Regex.IsMatch(email, MatchEmailPattern);
+            else
+                return false;
+        }
     }
 }

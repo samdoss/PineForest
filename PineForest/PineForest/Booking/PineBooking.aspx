@@ -8,12 +8,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphMenu" runat="server">
     <ul>
-        <ul>
-            <li class="active"><a class="scroll" href="../Booking/PineBooking.aspx">BOOKING</a></li>
-            <li><a class="scroll" href="../Booking/BookingHistory.aspx">TRANSACTIONS</a></li>
-            <li><a class="scroll" href="../Booking/logout.aspx">LOGOUT</a></li>
-        </ul>
+        <li class="active"><a class="scroll" href="../Booking/PineBooking.aspx">BOOKING</a></li>
+        <li><a class="scroll" href="../Booking/BookingHistory.aspx">TRANSACTIONS</a></li>
+        <li><a class="scroll" href="../Booking/logout.aspx">LOGOUT</a></li>
     </ul>
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphBanner" runat="server">
 </asp:Content>
@@ -151,6 +150,11 @@
                         <div class="col-xs-12 booking-form">
                             <table border="0" style="border: medium; height: 30px; border-collapse: separate; border-spacing: 10px;">
                                 <tr>
+                                    <td colspan="3">
+                                        <asp:Label ID="lblBookingErrorMsg" runat="server" ForeColor="red" Text=""></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td>&nbsp;
                                     </td>
                                     <td>
@@ -169,14 +173,14 @@
                                                             <tr>
                                                                 <td>
                                                                     <div class="col-xs-12 booking-form">
-                                                                        <table border="0" style="border: medium; height: 30px; border-collapse: separate; border-spacing: 10px;">
+                                                                        <table border="0" style="border: none; height: 30px; border-collapse: separate; border-spacing: 10px;">
                                                                             <tr>
                                                                                 <td>
                                                                                     <asp:Label ID="lblBookingName" runat="server" Text="Booking Name"></asp:Label>
                                                                                 </td>
                                                                                 <td colspan="3">
-                                                                                    <asp:TextBox ID="txtBookingName" Style="background-color: #f5f6b9" TabIndex="1" runat="server"></asp:TextBox>
-                                                                                    <cc1:TextBoxWatermarkExtender ID="tbweBookingName" runat="server" Enabled="true" TargetControlID="txtBookingName" WatermarkText="*"></cc1:TextBoxWatermarkExtender>
+                                                                                    <asp:TextBox ID="txtBookingName" Style="background-color: #f5f6b9" MaxLength="75" runat="server"></asp:TextBox>
+                                                                                    <cc1:TextBoxWatermarkExtender ID="tbweBookingName" runat="server" Enabled="true" WatermarkCssClass="WaterMarkedTextBox" TargetControlID="txtBookingName" WatermarkText="* Mandatory"></cc1:TextBoxWatermarkExtender>
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
@@ -184,13 +188,19 @@
                                                                                     <asp:Label ID="lblCheckInTime" runat="server" Text="Check In Time"></asp:Label>
                                                                                 </td>
                                                                                 <td>
-                                                                                    <asp:TextBox ID="txtCheckInTime" TabIndex="2" runat="server"></asp:TextBox>
+                                                                                    <asp:TextBox ID="txtCheckInTime" MaxLength="8" runat="server"></asp:TextBox>
+                                                                                    <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender2" runat="server" TargetControlID="txtCheckInTime"
+                                                                                        FilterType="Custom" ValidChars="1234567890:."
+                                                                                        Enabled="True" />
                                                                                 </td>
                                                                                 <td>
                                                                                     <asp:Label ID="lblCheckoutTime" runat="server" Text="Check Out Time"></asp:Label>
                                                                                 </td>
                                                                                 <td>
-                                                                                    <asp:TextBox ID="txtCheckOutTime" TabIndex="3" runat="server"></asp:TextBox>
+                                                                                    <asp:TextBox ID="txtCheckOutTime" MaxLength="8" runat="server"></asp:TextBox>
+                                                                                    <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" runat="server" TargetControlID="txtCheckOutTime"
+                                                                                        FilterType="Custom" ValidChars="1234567890:."
+                                                                                        Enabled="True" />
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
@@ -199,7 +209,7 @@
                                                                                 </td>
                                                                                 <td>
                                                                                     <asp:DropDownList ID="ddlNoofAdults" AppendDataBoundItems="True" Width="70px" CssClass="Dropdownlist"
-                                                                                        runat="server" TabIndex="4">
+                                                                                        runat="server">
                                                                                         <asp:ListItem Value="1">1</asp:ListItem>
                                                                                         <asp:ListItem Value="2">2</asp:ListItem>
                                                                                         <asp:ListItem Value="3">3</asp:ListItem>
@@ -210,7 +220,7 @@
                                                                                 </td>
                                                                                 <td>
                                                                                     <asp:DropDownList ID="ddlNoofChildrens" AppendDataBoundItems="True" Width="70" CssClass="Dropdownlist"
-                                                                                        runat="server" TabIndex="5">
+                                                                                        runat="server">
                                                                                         <asp:ListItem Value="0">0</asp:ListItem>
                                                                                         <asp:ListItem Value="1">1</asp:ListItem>
                                                                                         <asp:ListItem Value="2">2</asp:ListItem>
@@ -222,7 +232,7 @@
                                                                                     <asp:Label ID="lblProofVerification" runat="server" Text="ID Proof"></asp:Label>
                                                                                 </td>
                                                                                 <td colspan="3">
-                                                                                    <asp:TextBox ID="txtProofVerification" Style="background-color: #f5f6b9;" TabIndex="6" runat="server"></asp:TextBox>
+                                                                                    <asp:TextBox ID="txtProofVerification" Style="background-color: #f5f6b9;" MaxLength="75" runat="server"></asp:TextBox>
                                                                                     <cc1:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender1" runat="server" Enabled="true" TargetControlID="txtProofVerification" WatermarkText="* Mandatory"></cc1:TextBoxWatermarkExtender>
                                                                                 </td>
                                                                             </tr>
@@ -231,11 +241,14 @@
                                                                                     <asp:Label ID="lblEmailID" runat="server" Text="Email ID"></asp:Label>
                                                                                 </td>
                                                                                 <td colspan="3">
-                                                                                    <asp:TextBox ID="txtEmailID" Style="background-color: #f5f6b9;" TabIndex="6" runat="server"></asp:TextBox>
+                                                                                    <asp:TextBox ID="txtEmailID" Style="background-color: #f5f6b9;" MaxLength="150" runat="server"></asp:TextBox>
                                                                                     <cc1:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender2" runat="server" Enabled="true" TargetControlID="txtEmailID" WatermarkText="* Mandatory"></cc1:TextBoxWatermarkExtender>
                                                                                     <cc1:FilteredTextBoxExtender ID="ftbetxtEmailID" runat="server" TargetControlID="txtEmailID"
                                                                                         FilterType="Custom" ValidChars="1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_.@"
                                                                                         Enabled="True" />
+                                                                                    <asp:RegularExpressionValidator ID="revEmailID" runat="server" ControlToValidate="txtEmailID" ValidationGroup="ValidateBookingSubmit"
+                                                                                        ValidationExpression="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" Display="None" ErrorMessage="Invalid EmailID"></asp:RegularExpressionValidator>
+                                                                                    <cc1:ValidatorCalloutExtender ID="vceEmailID" runat="server" TargetControlID="revEmailID"></cc1:ValidatorCalloutExtender>
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
@@ -243,7 +256,7 @@
                                                                                     <asp:Label ID="lblPhoneNumber" runat="server" Text="Phone Number"></asp:Label>
                                                                                 </td>
                                                                                 <td colspan="3">
-                                                                                    <asp:TextBox ID="txtPhoneNumber" Style="background-color: #f5f6b9;" MaxLength="10" TabIndex="6" runat="server"></asp:TextBox>
+                                                                                    <asp:TextBox ID="txtPhoneNumber" Style="background-color: #f5f6b9;" MaxLength="15" runat="server"></asp:TextBox>
                                                                                     <cc1:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender3" runat="server" Enabled="true" TargetControlID="txtPhoneNumber" WatermarkText="* Mandatory"></cc1:TextBoxWatermarkExtender>
                                                                                     <cc1:FilteredTextBoxExtender ID="ftbetxtPhoneNumber" runat="server" TargetControlID="txtPhoneNumber"
                                                                                         FilterType="Custom" ValidChars="1234567890"
@@ -262,7 +275,7 @@
                                     </td>
                                     <td style="vertical-align: top; margin-top: 10px;">
                                         <table border="0" style="min-width: 300px; margin-top: 10px;">
-                                            <tr style="background-color: hotpink; text-align: left; vertical-align: middle; height: 50px;">
+                                            <tr style="background-color: palegreen; text-align: left; vertical-align: middle; height: 50px;">
                                                 <td>
                                                     <h4><b>
                                                         <center>Booking Summary</center>
@@ -272,7 +285,7 @@
                                         </table>
                                         <br />
                                         <table border="0" style="min-width: 300px;">
-                                            <tr style="background-color: hotpink; text-align: left; vertical-align: middle; height: 50px;">
+                                            <tr style="background-color: palegreen; text-align: left; vertical-align: middle; height: 50px;">
                                                 <td colspan="2">
                                                     <h4><b>Fare Details</b></h4>
                                                 </td>
@@ -314,6 +327,14 @@
                                                     </h4>
                                                 </td>
                                             </tr>
+                                            <tr>
+                                                <td colspan="2">&nbsp;<br />
+                                                    <br />
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <asp:Button ID="btnSubmitBooking" Text="Complete Booking..." TabIndex="4" runat="server" ValidationGroup="ValidateBookingSubmit" CausesValidation="true" OnClick="btnSubmitBooking_Click" />
+
+                                                </td>
+                                            </tr>
                                         </table>
                                     </td>
                                 </tr>
@@ -321,8 +342,18 @@
                         </div>
                     </asp:View>
                     <asp:View ID="view3" runat="server">
-                        <div class="col-xs-12 booking-form">
-                            <h4>Thank you for booking in PineForestMunnar.com. You will receive a mail confirmation.</h4>
+                        <div class="col-xs-12 booking-form" style="color: #0094ff">
+                            <br />
+                            <br />
+                            <center>
+                            <h4>Thank you for booking in PineForestMunnar.com. <br /> <br />
+                                You will receive a call shortly from PineForestMunnar.com.</h4>
+                                </center>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
                         </div>
                     </asp:View>
                 </asp:MultiView>

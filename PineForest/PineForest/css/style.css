@@ -3154,7 +3154,7 @@ select.arrival {
 
     .Grid td {
         padding: 2px;
-        border: solid 1px #c1c1c1;
+        border: solid 0px #c1c1c1;
     }
 
     .Grid th {
@@ -3195,3 +3195,23 @@ select.arrival {
                 color: #000;
                 text-decoration: none;
             }
+.WaterMarkedTextBox
+{    
+    background-color: #F0F8FF;
+    color: gray;    
+}
+
+.WaterMarkedTextBoxPSW
+{
+    background-position: center;
+    height: 16px;
+    width: 168px;
+    padding: 2px 2 2 2px;
+    border: 1px solid #BEBEBE;
+    background-color: #F0F8FF;
+    color: white;
+    vertical-align: middle;
+    text-align: right;
+    background-image: url(Images/psw_wMark.png);
+    background-repeat: no-repeat;
+}
