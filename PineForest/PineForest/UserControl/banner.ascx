@@ -35,24 +35,24 @@
                 <div id="ei-slider" class="ei-slider">
                     <ul class="ei-slider-large">
 						<li>
-                            <img src="../UserControl/images/large/1.png" alt="image06"/>
+                            <img src="../UserControl/images/large/banner1.jpg" alt="image06"/>
                             <div class="ei-title">
                                 <h2>Munnar</h2>
                                 <h3>HoneyMoon Package</h3>
                             </div>
                         </li>
                         <li>
-                            <img src="../UserControl/images/large/2.png" alt="image01" />
+                            <img src="../UserControl/images/large/banner2.jpg" alt="image01" />
                             <div class="ei-title">
                                 <h2>Per Couple</h2>
-                                <h3>Rs. 11,000 Only</h3>
+                                <h3>Rs. 11,000 Only</h3>                                
                             </div>
                         </li>                        
                     </ul><!-- ei-slider-large -->
                     <ul class="ei-slider-thumbs">
                         <li class="ei-slider-element">Current</li>						
-                        <li><a href="#">Slide 1</a><img src="../UserControl/images/thumbs/1.png" alt="thumb01" /></li>
-                        <li><a href="#">Slide 2</a><img src="../UserControl/images/thumbs/2.png" alt="thumb02" /></li>                        
+                        <li><a href="#">Slide 1</a><img src="../UserControl/images/thumbs/banner1_thumb.jpg" alt="thumb01" /></li>
+                        <li><a href="#">Slide 2</a><img src="../UserControl/images/thumbs/banner2_thumb.jpg" alt="thumb02" /></li>                        
                     </ul><!-- ei-slider-thumbs -->
                 </div><!-- ei-slider -->
                 <div class="reference">

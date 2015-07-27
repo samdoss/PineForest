@@ -38,26 +38,26 @@
 	position: absolute;
 	right: 50%;
 	margin-right: 13%;
-	top: 30%;
+	top: 10%;
 }
 .ei-title h2, .ei-title h3{
 	text-align: right;
 }
 .ei-title h2{
-	font-size: 40px;
+	font-size: 30px;
 	line-height: 50px;
-	font-family: 'Playfair Display', serif;
+	font-family: BlackChancery, 'Playfair Display', serif;
     font-weight :700;
 	font-style: italic;
-	color: #ed9090;
+	color: #ff006e;
 }
 .ei-title h3{
-	font-size: 50px;
+	font-size: 30px;
 	line-height: 70px;
-	font-family: 'Open Sans Condensed', sans-serif;
+	font-family: BlackChancery, 'Open Sans Condensed', sans-serif;
 	text-transform: uppercase;
     font-weight :600;
-	color: #539ee6;
+	color: white;
 }
 .ei-slider-thumbs{
 	height: 13px;

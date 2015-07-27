@@ -11,6 +11,14 @@ namespace PineForest
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
+            {
+
+            }
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
 
         }
     }

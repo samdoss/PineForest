@@ -3,6 +3,23 @@
 <%@ Register TagPrefix="uc" TagName="banner" Src="~/UserControl/banner.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHeader" runat="server">
     <title>Pine Forest Munnar | Home</title>
+    <link href="../css/owl.carousel.css" rel="stylesheet">
+    <script src="../js/owl.carousel.js"></script>
+    <!-- requried-jsfiles-for owl -->
+    <script>
+        $(document).ready(function () {
+            $("#owl-demo").owlCarousel({
+                items: 1,
+                lazyLoad: true,
+                autoPlay: true,
+                navigation: true,
+                navigationText: false,
+                pagination: false,
+            });
+        });
+    </script>
+    <!-- //requried-jsfiles-for owl -->
+
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphMenu" runat="server">
     <ul>
@@ -19,18 +36,18 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cpContent" runat="server">
     <!---strat-date-piker---->
-    <link rel="stylesheet" href="css/jquery-ui.css" />
-    <script src="js/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../css/jquery-ui.css" />
+    <script src="../js/jquery-ui.js"></script>
     <script>
         $(function () {
             $("#datepicker,#datepicker1").datepicker();
         });
     </script>
     <!---/End-date-piker---->
-    <link type="text/css" rel="stylesheet" href="css/JFGrid.css" />
-    <link type="text/css" rel="stylesheet" href="css/JFFormStyle-1.css" />
-    <script type="text/javascript" src="js/JFCore.js"></script>
-    <script type="text/javascript" src="js/JFForms.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/JFGrid.css" />
+    <link type="text/css" rel="stylesheet" href="../css/JFFormStyle-1.css" />
+    <script type="text/javascript" src="../js/JFCore.js"></script>
+    <script type="text/javascript" src="../js/JFForms.js"></script>
     <!-- Set here the key for your domain in order to hide the watermark on the web server -->
     <script type="text/javascript">
         (function () {
@@ -75,7 +92,7 @@
                         </li>
                         <li class="span1_of_3">
                             <div class="date_btn">
-                                <asp:Button ID="btnSubmit" Text="View Available" runat="server" OnClick="btnSubmit_Click" />                          
+                                <asp:Button ID="btnSubmit" Text="View Available" runat="server" OnClick="btnSubmit_Click" />
                             </div>
                         </li>
                         <div class="clearfix"></div>
@@ -86,69 +103,18 @@
         </div>
     </div>
 
-    <!---->
-    <div class="package text-center">
-        <div class="container">
-            <h3>Book A Package</h3>
-            <p>For all the guest we will provide free wifi, neat and clean atmosphere.</p>
-            <!-- requried-jsfiles-for owl -->
-            <link href="css/owl.carousel.css" rel="stylesheet">
-            <script src="js/owl.carousel.js"></script>
-            <script>
-                $(document).ready(function () {
-                    $("#owl-demo").owlCarousel({
-                        items: 1,
-                        lazyLoad: true,
-                        autoPlay: true,
-                        navigation: true,
-                        navigationText: false,
-                        pagination: false,
-                    });
-                });
-            </script>
-            <!-- //requried-jsfiles-for owl -->
-            <div id="owl-demo" class="owl-carousel">
-                <div class="item text-center image-grid">
-                    <ul>
-                        <li>
-                            <img src="images/1.jpg" alt=""></li>
-                        <li>
-                            <img src="images/2.jpg" alt=""></li>
-                        <li>
-                            <img src="images/3.jpg" alt=""></li>
-                    </ul>
-                </div>
-                <div class="item text-center image-grid">
-                    <ul>
-                        <li>
-                            <img src="images/3.jpg" alt=""></li>
-                        <li>
-                            <img src="images/4.jpg" alt=""></li>
-                        <li>
-                            <img src="images/5.jpg" alt=""></li>
-                    </ul>
-                </div>
-                <div class="item text-center image-grid">
-                    <ul>
-                        <li>
-                            <img src="images/6.jpg" alt=""></li>
-                        <li>
-                            <img src="images/2.jpg" alt=""></li>
-                        <li>
-                            <img src="images/4.jpg" alt=""></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!---->
+    <br />
+    <br />
+    <br />
+
     <div class="rooms text-center">
         <div class="container">
             <h3>Our Room Types</h3>
             <div class="room-grids">
                 <div class="col-md-4 room-sec">
-                    <img src="images/Economy.jpg" alt="" />
-                    <h4>Standard Double Bed Room</h4>
+                    <img src="roomimages/Room1.jpg" alt="" />
+                    <h4>Room Type One</h4>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                     <div class="items">
                         <li><a href="#"><span class="img1"></span></a></li>
                         <li><a href="#"><span class="img2"></span></a></li>
@@ -156,11 +122,14 @@
                         <li><a href="#"><span class="img4"></span></a></li>
                         <li><a href="#"><span class="img5"></span></a></li>
                         <li><a href="#"><span class="img6"></span></a></li>
+
                     </div>
+
                 </div>
                 <div class="col-md-4 room-sec">
-                    <img src="images/Deluxe.jpg" alt="" />
-                    <h4>Superior Double Bed Room</h4>
+                    <img src="roomimages/Room2.jpg" alt="" />
+                    <h4>Room Type Two</h4>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                     <div class="items">
                         <li><a href="#"><span class="img1"></span></a></li>
                         <li><a href="#"><span class="img2"></span></a></li>
@@ -168,11 +137,14 @@
                         <li><a href="#"><span class="img4"></span></a></li>
                         <li><a href="#"><span class="img5"></span></a></li>
                         <li><a href="#"><span class="img6"></span></a></li>
+
                     </div>
+
                 </div>
                 <div class="col-md-4 room-sec">
-                    <img src="images/FamilyRoom.jpg" alt="" />
-                    <h4>Family Room</h4>
+                    <img src="roomimages/Room3.jpg" alt="" />
+                    <h4>Room Type Three</h4>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                     <div class="items">
                         <li><a href="#"><span class="img1"></span></a></li>
                         <li><a href="#"><span class="img2"></span></a></li>
@@ -180,10 +152,60 @@
                         <li><a href="#"><span class="img4"></span></a></li>
                         <li><a href="#"><span class="img5"></span></a></li>
                         <li><a href="#"><span class="img6"></span></a></li>
+
                     </div>
+
                 </div>
                 <div class="clearfix"></div>
+                <div class="col-md-4 room-sec">
+                    <img src="roomimages/Room4.jpg" alt="" />
+                    <h4>Room Type Four</h4>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <div class="items">
+                        <li><a href="#"><span class="img1"></span></a></li>
+                        <li><a href="#"><span class="img2"></span></a></li>
+                        <li><a href="#"><span class="img3"></span></a></li>
+                        <li><a href="#"><span class="img4"></span></a></li>
+                        <li><a href="#"><span class="img5"></span></a></li>
+                        <li><a href="#"><span class="img6"></span></a></li>
+
+                    </div>
+
+                </div>
+                <div class="col-md-4 room-sec">
+                    <img src="roomimages/Room5.jpg" alt="" />
+                    <h4>Room Type Five</h4>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <div class="items">
+                        <li><a href="#"><span class="img1"></span></a></li>
+                        <li><a href="#"><span class="img2"></span></a></li>
+                        <li><a href="#"><span class="img3"></span></a></li>
+                        <li><a href="#"><span class="img4"></span></a></li>
+                        <li><a href="#"><span class="img5"></span></a></li>
+                        <li><a href="#"><span class="img6"></span></a></li>
+
+                    </div>
+
+                </div>
+                <div class="col-md-4 room-sec">
+                    <img src="roomimages/Room6.jpg" alt="" />
+                    <h4>Room Type Six</h4>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <div class="items">
+                        <li><a href="#"><span class="img1"></span></a></li>
+                        <li><a href="#"><span class="img2"></span></a></li>
+                        <li><a href="#"><span class="img3"></span></a></li>
+                        <li><a href="#"><span class="img4"></span></a></li>
+                        <li><a href="#"><span class="img5"></span></a></li>
+                        <li><a href="#"><span class="img6"></span></a></li>
+
+                    </div>
+
+                </div>
+                <div class="clearfix"></div>
+
             </div>
+
             <div>
                 <%--<img src="images/PricingTab.png" alt="" />--%>
             </div>
