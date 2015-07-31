@@ -103,7 +103,10 @@
                             </span>
                         </div>
                         <div>
-                            <asp:Button ID="btnSubmit" Text="Submit us" ValidationGroup="ContactUsValid" runat="server" OnClick="btnSubmit_Click" />
+                            <asp:Button ID="btnSubmit" Text="Submit us" ValidationGroup="ContactUsValid" runat="server" OnClick="btnSubmit_Click" />                            
+                        </div>
+                        <div>
+                            <asp:Label ID="lblMessagebox" runat="server" Text=""></asp:Label>
                         </div>
 
                     </div>
